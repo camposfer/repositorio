@@ -10,4 +10,9 @@
 
 @interface FirstViewController : UIViewController
 
+
+
+@property (retain) IBOutlet UIImageView* imageSelector;
+
 @end
+

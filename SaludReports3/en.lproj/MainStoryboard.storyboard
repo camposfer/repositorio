@@ -1,101 +1,1382 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2524" systemVersion="12A217" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1863"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier First View Controller - First-->
+        <!--First View Controller - Inicio-->
         <scene sceneID="11">
             <objects>
                 <viewController id="2" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" lineBreakMode="tailTruncation" autoshrinkMode="none" minimumFontSize="10" text="First View" textAlignment="center" id="18">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                            </label>
-                            <textView translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" textAlignment="center" id="19">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="Ka6-KM-ccG"/>
-                                    <constraint firstAttribute="height" constant="70" id="WP3-kA-6dL"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <string key="text">Loaded by the First View Controller — an instance of FirstViewController — specified in the app delegate.</string>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                            </textView>
-                            <toolbar translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="20">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FONDO-1.png" id="coT-oO-bBj">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="949"/>
+                            </imageView>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="20">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                 <items/>
                             </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="F1N4NC14L NUMB3R5 R34D3R" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="11" id="s9G-Ey-Q7T">
+                                <rect key="frame" x="497" y="201" width="470" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <color key="textColor" red="1" green="0.59215688710000003" blue="0.1098039299" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LECTOR DE NÚMEROS FINANCIEROS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="11" id="hPr-Pq-tHw">
+                                <rect key="frame" x="538" y="298" width="388" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" text="Seleccione la opción deseada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="11" id="ozK-28-mLa">
+                                <rect key="frame" x="266" y="593" width="492" height="35"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="carbon.jpg" id="MrL-4y-sET">
+                                <rect key="frame" x="53" y="570" width="921" height="15"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="carbon.jpg" id="5GD-Vx-QCa">
+                                <rect key="frame" x="82" y="180" width="365" height="204"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="descargar1-1.png" id="ttY-c6-AoA">
+                                <rect key="frame" x="481" y="666" width="46" height="45"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NUMB3Reader" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="11" id="EH3-Dm-7Ix">
+                                <rect key="frame" x="-15" y="256" width="559" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <color key="textColor" red="0.80392163989999998" green="0.98039221759999995" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="TpR-qO-jNk">
+                                <rect key="frame" x="966" y="666" width="44" height="40"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="20" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="21X-Fc-h5m"/>
-                            <constraint firstItem="20" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="82v-FK-dPD"/>
-                            <constraint firstItem="18" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9xU-8S-4zl"/>
-                            <constraint firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GbQ-Sy-14J"/>
-                            <constraint firstItem="19" firstAttribute="centerX" secondItem="18" secondAttribute="centerX" type="default" id="b0V-hJ-9Xa"/>
-                            <constraint firstItem="20" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="i7B-V8-9lR"/>
-                            <constraint firstItem="18" firstAttribute="top" secondItem="17" secondAttribute="top" constant="250" id="oEv-T3-Vih"/>
-                            <constraint firstItem="19" firstAttribute="top" secondItem="17" secondAttribute="top" constant="350" id="pKg-gt-hVJ"/>
-                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Inicio" image="house.png" id="7"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="imageSelector" destination="ttY-c6-AoA" id="lRB-fs-Uyu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3041" y="150"/>
         </scene>
-        <!--class Prefix:identifier Second View Controller - Second-->
+        <!--Second View Controller - Reportes-->
         <scene sceneID="13">
             <objects>
-                <viewController id="3" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="currentContext" id="3" customClass="SecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" lineBreakMode="tailTruncation" autoshrinkMode="none" minimumFontSize="10" text="Second View" textAlignment="center" id="21">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FONDO-1.png" id="6dK-9m-P5E">
+                                <rect key="frame" x="0.0" y="-28" width="1024" height="720"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="bYd-28-VsG">
+                                <rect key="frame" x="10" y="20" width="50" height="37"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Subtotales por :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="XOs-Kh-p4o">
+                                <rect key="frame" x="702" y="265" width="182" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.06815606917" green="0.064667410719999999" blue="0.39058514030000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                             </label>
-                            <textView translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" textAlignment="center" id="22">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="39I-E8-1dg"/>
-                                    <constraint firstAttribute="width" constant="297" id="F6J-XU-KBh"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <string key="text">Loaded by the Second View Controller — an instance of SecondViewController — specified in the app delegate.</string>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                            </textView>
-                            <navigationBar translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="23">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Presupuesto anual" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6CR-Sl-7Ve">
+                                <rect key="frame" x="232" y="409" width="327" height="18"/>
+                                <color key="backgroundColor" red="1" green="0.3021599781" blue="0.2478508753" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Presupuesto al periodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="daA-Mq-XG9">
+                                <rect key="frame" x="567" y="409" width="443" height="18"/>
+                                <color key="backgroundColor" red="1" green="0.3021599781" blue="0.2478508753" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="23">
+                                <rect key="frame" x="102" y="0.0" width="922" height="44"/>
                                 <items>
-                                    <navigationItem id="24"/>
+                                    <navigationItem id="24">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="KlJ-62-MpU">
+                                            <rect key="frame" x="254" y="7" width="414" height="30"/>
+                                            <segments>
+                                                <segment title="Diario"/>
+                                                <segment title="Semanal"/>
+                                                <segment title="Histórico"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </segmentedControl>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blue6.jpg" id="DeT-bA-Odl">
+                                <rect key="frame" x="56" y="93" width="902" height="7"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Reportes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="RWl-Oy-VnC">
+                                <rect key="frame" x="266" y="45" width="492" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Filtros" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="HX8-YU-NAe">
+                                <rect key="frame" x="16" y="108" width="212" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Otros filtros" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="emz-ap-pCG">
+                                <rect key="frame" x="217" y="117" width="122" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="7rz-fB-1LD">
+                                <rect key="frame" x="618" y="332" width="358" height="29"/>
+                                <segments>
+                                    <segment title="Finalidad" width="58.833333333333336"/>
+                                    <segment title="Reor."/>
+                                    <segment title="Acti"/>
+                                    <segment title="TG"/>
+                                    <segment title="Ent Fed"/>
+                                    <segment title="Proy Inv."/>
+                                </segments>
+                                <color key="tintColor" red="0.068156069172580686" green="0.064667410719774998" blue="0.39058514030612246" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlIndexChanged:" destination="3" eventType="valueChanged" id="iJh-EB-DcB"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Dw1-CW-HuY">
+                                <rect key="frame" x="618" y="300" width="358" height="30"/>
+                                <segments>
+                                    <segment title="Unidad"/>
+                                    <segment title="Capitulo"/>
+                                    <segment title="Programa"/>
+                                    <segment title="Concepto"/>
+                                    <segment title="Partida"/>
+                                </segments>
+                                <color key="tintColor" red="0.06815606917" green="0.064667410719999999" blue="0.39058514030000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlIndexChanged:" destination="3" eventType="valueChanged" id="P2W-Hg-Vz5"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6BF-U3-0YL">
+                                <rect key="frame" x="63" y="155" width="181" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Seleccione la unidad         " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraUnidad:" destination="3" eventType="touchUpInside" id="1WW-fE-wID"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WYn-IL-VfJ">
+                                <rect key="frame" x="63" y="191" width="181" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Seleccione el capitulo   " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraCapitulo:" destination="3" eventType="touchUpInside" id="fkn-pt-Hmz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Scm-mA-mc3">
+                                <rect key="frame" x="63" y="290" width="181" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Seleccione la partida     " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraCcp:" destination="3" eventType="touchUpInside" id="p0e-1W-BH8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uo9-6z-QCO">
+                                <rect key="frame" x="289" y="362" width="88" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Generar" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generaPresupuestoWithLoading:" destination="3" eventType="touchUpInside" id="n4k-6y-NOz"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="nYx-0b-NHo">
+                                <rect key="frame" x="217" y="155" width="27" height="29"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hn7-8e-416">
+                                <rect key="frame" x="754" y="224" width="166" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" Fecha                         " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraFecha:" destination="3" eventType="touchUpInside" id="abi-jl-4cJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bNz-cb-TWu">
+                                <rect key="frame" x="752" y="175" width="166" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Periodo                             " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraPeriodo:" destination="3" eventType="touchUpInside" id="ovO-Zl-anJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="xMs-jE-ktS">
+                                <rect key="frame" x="895" y="223" width="27" height="29"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="Sh5-1G-EEb">
+                                <rect key="frame" x="898" y="176" width="27" height="29"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="HHE-B7-Mbj">
+                                <rect key="frame" x="217" y="290" width="27" height="29"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RpB-Nv-q7u">
+                                <rect key="frame" x="321" y="155" width="145" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Selec. reasignaciones" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraProg:" destination="3" eventType="touchUpInside" id="noN-w1-Nq4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Y2P-YP-ekD">
+                                <rect key="frame" x="321" y="191" width="145" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Selec. la actividad" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraActi:" destination="3" eventType="touchUpInside" id="5Ky-qA-g4V"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="VRS-1P-4SO">
+                                <rect key="frame" x="456" y="155" width="27" height="29"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="v4R-gQ-qeh">
+                                <rect key="frame" x="457" y="191" width="27" height="28"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q6A-ao-WsP">
+                                <rect key="frame" x="321" y="224" width="145" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Selec. ProyInv" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraProyInv:" destination="3" eventType="touchUpInside" id="IkB-9a-bbG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CiL-fx-cBM">
+                                <rect key="frame" x="321" y="257" width="145" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Predefinidos" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraPred:" destination="3" eventType="touchUpInside" id="ldv-dO-bab"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="am7-z4-14F">
+                                <rect key="frame" x="457" y="224" width="27" height="29"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="KQi-cu-OY7">
+                                <rect key="frame" x="456" y="257" width="27" height="29"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uvt-gl-138">
+                                <rect key="frame" x="540" y="158" width="145" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Selec. tipo de gasto   " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraDide:" destination="3" eventType="touchUpInside" id="fzf-mL-1Gu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AHM-M4-W3o">
+                                <rect key="frame" x="540" y="190" width="145" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Selec. fuente financ." backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraDver:" destination="3" eventType="touchUpInside" id="tu0-Wq-Fwr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="xe3-iT-0P2">
+                                <rect key="frame" x="669" y="158" width="27" height="29"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="Qwn-Zh-Jvd">
+                                <rect key="frame" x="669" y="190" width="27" height="29"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WPE-g9-5pp">
+                                <rect key="frame" x="540" y="224" width="145" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Selec. ent federativa  " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraEntidad:" destination="3" eventType="touchUpInside" id="yx6-4g-797"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="Te2-i8-Vcb">
+                                <rect key="frame" x="669" y="224" width="27" height="29"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4Nw-SX-GBg">
+                                <rect key="frame" x="10" y="154" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="w5N-A0-rTr">
+                                <rect key="frame" x="10" y="221" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="c3K-DM-9uo">
+                                <rect key="frame" x="10" y="190" width="50" height="30"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="r5G-yi-zEU">
+                                <rect key="frame" x="10" y="289" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="exF-3c-AQ3">
+                                <rect key="frame" x="10" y="254" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZUs-Z3-iSm">
+                                <rect key="frame" x="266" y="154" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="YVz-qN-Qyh">
+                                <rect key="frame" x="266" y="225" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="prt-Mh-a25">
+                                <rect key="frame" x="266" y="256" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3wR-Iq-Hz4">
+                                <rect key="frame" x="266" y="190" width="50" height="30"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="YqP-g4-Dlr">
+                                <rect key="frame" x="487" y="190" width="50" height="30"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="6TT-a2-ak2">
+                                <rect key="frame" x="487" y="225" width="50" height="29"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Uaz-0B-aQo">
+                                <rect key="frame" x="487" y="158" width="50" height="30"/>
+                                <segments>
+                                    <segment title="y"/>
+                                    <segment title="o"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M5u-t1-PEG">
+                                <rect key="frame" x="993" y="227" width="24" height="108"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="6zE-tb-Xn8"/>
+                                    <outlet property="delegate" destination="3" id="D6r-OG-2AS"/>
+                                </connections>
+                            </tableView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="gou-YH-i3U">
+                                <rect key="frame" x="73" y="522" width="151" height="187"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xbS-7a-khi">
+                                    <size key="itemSize" width="182" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell2" id="KQm-lZ-dOK" customClass="MyCollectionViewCell">
+                                        <rect key="frame" x="-16" y="0.0" width="182" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2bV-gm-01t">
+                                                    <rect key="frame" x="0.0" y="0.0" width="136" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="labelCell" destination="2bV-gm-01t" id="QsS-wK-uVa"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="ufa-Wq-fea"/>
+                                    <outlet property="delegate" destination="3" id="kBS-Wa-ULo"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="jAf-qf-FHC">
+                                <rect key="frame" x="229" y="522" width="98" height="187"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V6I-Zf-3fX">
+                                    <size key="itemSize" width="98" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell2" id="WJB-vg-5VZ" customClass="MyCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="98" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I10-Ui-Vhj">
+                                                    <rect key="frame" x="0.0" y="14" width="98" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="labelCell" destination="I10-Ui-Vhj" id="Ejs-IF-htS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="lSi-ks-WMU"/>
+                                    <outlet property="delegate" destination="3" id="KHe-Lw-tKe"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="sBN-uc-y9P">
+                                <rect key="frame" x="10" y="522" width="58" height="187"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aJM-e4-ZyS">
+                                    <size key="itemSize" width="58" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell2" id="l0J-G8-ywy" customClass="MyCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="58" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FaW-qg-TGL">
+                                                    <rect key="frame" x="-1" y="14" width="58" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="labelCell" destination="FaW-qg-TGL" id="gLO-hz-9Qo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="GYO-lM-oqG"/>
+                                    <outlet property="delegate" destination="3" id="oxW-lc-272"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zzr-vk-vjX">
+                                <rect key="frame" x="63" y="256" width="181" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Seleccione el concepto    " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraCapitulo:" destination="3" eventType="touchUpInside" id="3GX-gn-Nnn"/>
+                                    <action selector="muestraConcepto:" destination="3" eventType="touchUpInside" id="jSq-hL-NgU"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="GGS-jp-n6V">
+                                <rect key="frame" x="217" y="191" width="27" height="28"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="yUd-Kv-lQw">
+                                <rect key="frame" x="217" y="256" width="27" height="28"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C2l-Vy-eLG">
+                                <rect key="frame" x="63" y="221" width="172" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Seleccione el programa    " backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="muestraPrograma:" destination="3" eventType="touchUpInside" id="liK-98-dEP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrowr.png" id="YCT-1w-Xrj">
+                                <rect key="frame" x="217" y="222" width="27" height="29"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EC9-Ax-YhO">
+                                <rect key="frame" x="487" y="358" width="50" height="46"/>
+                                <state key="normal" backgroundImage="arrowr.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveCollectionAndButton:" destination="3" eventType="touchUpInside" id="UsE-uS-eQk"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" editable="NO" id="Rbc-ll-qKE">
+                                <rect key="frame" x="16" y="361" width="219" height="45"/>
+                                <color key="backgroundColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pZ4-MP-kC2">
+                                <rect key="frame" x="922" y="51" width="34" height="34"/>
+                                <state key="normal" backgroundImage="ACTUA.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartWithLoading:" destination="3" eventType="touchUpInside" id="yFt-bd-B1b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WZ7-ot-sOB">
+                                <rect key="frame" x="874" y="51" width="34" height="34"/>
+                                <state key="normal" backgroundImage="wif1.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="activeDeactiveOnline:" destination="3" eventType="touchUpInside" id="NeB-s1-T8n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="00x-Wv-Wg2">
+                                <rect key="frame" x="10" y="430" width="110" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Clave" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortPpto:" destination="3" eventType="touchUpInside" id="mA9-h3-0fK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zIV-tw-LKg">
+                                <rect key="frame" x="122" y="430" width="99" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Descripción" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yja-MQ-94z">
+                                <rect key="frame" x="13" y="322" width="115" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <state key="normal" title="Limpiar filtros" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cleanSelectorsForButton:" destination="3" eventType="touchUpInside" id="lx3-3A-y29"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DxL-pz-8I3">
+                                <rect key="frame" x="138" y="322" width="115" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <state key="normal" title="Limpiar reporte" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cleanReportForButton:" destination="3" eventType="touchUpInside" id="G0w-SF-Zml"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hcF-fp-VzO">
+                                <rect key="frame" x="229" y="430" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Original" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gFH-ar-R5D">
+                                <rect key="frame" x="340" y="430" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Modificado" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CeX-y5-JIf">
+                                <rect key="frame" x="679" y="430" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mod periodo" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LoQ-qO-UOx">
+                                <rect key="frame" x="451" y="430" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Disponible" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jrO-rf-kwK">
+                                <rect key="frame" x="567" y="430" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Dispo 60 dias" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F8K-mc-0ay">
+                                <rect key="frame" x="791" y="430" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Ejercido" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cws-wZ-Dse">
+                                <rect key="frame" x="901" y="429" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Dis Periodo" backgroundImage="ipad-button-blue-pressed.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fyv-Md-4P1">
+                                <rect key="frame" x="788" y="369" width="41" height="39"/>
+                                <state key="normal" backgroundImage="MAIL.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendCsv:" destination="3" eventType="touchUpInside" id="azy-VR-hfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c2R-5E-v91">
+                                <rect key="frame" x="898" y="369" width="41" height="38"/>
+                                <state key="normal" backgroundImage="PDFAPAG.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewPdf:" destination="3" eventType="touchUpInside" id="pKX-rc-ZDt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qiX-ym-MgQ">
+                                <rect key="frame" x="945" y="219" width="35" height="33"/>
+                                <state key="normal" backgroundImage="BORRAR8.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadWithLoading:" destination="3" eventType="touchUpInside" id="Eua-VF-jde"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yg4-UA-8B2">
+                                <rect key="frame" x="839" y="167" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Original" backgroundImage="button_grey_light.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="r1e-Hk-RfY"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="xe6-sA-iuZ">
+                                <rect key="frame" x="1500" y="-1111" width="1000" height="3000"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FNp-Z2-hYa">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CCT-8a-jC3">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gPW-qM-3Jd">
+                                <rect key="frame" x="328" y="121" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="onTintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchTapped:" destination="3" eventType="valueChanged" id="u3Z-TD-s1x"/>
+                                </connections>
+                            </switch>
+                            <searchBar contentMode="redraw" id="BnF-NM-eMW">
+                                <rect key="frame" x="264" y="287" width="263" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3" id="Unh-Un-9Q8"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="GLr-6N-Aj8">
+                                <rect key="frame" x="10" y="461" width="1000" height="256"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q6T-Gn-XAb">
+                                    <size key="itemSize" width="110" height="44"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="3Xq-by-Mwa" customClass="MyCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOb-Wd-1BK">
+                                                    <rect key="frame" x="5" y="2" width="103" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="blue6.jpg" id="1Hf-X1-lhH">
+                                                    <rect key="frame" x="-98" y="38" width="208" height="3"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="labelCell" destination="SOb-Wd-1BK" id="a6G-gf-WXB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="HXw-oX-iJW"/>
+                                    <outlet property="delegate" destination="3" id="Aho-n3-itm"/>
+                                </connections>
+                            </collectionView>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" id="kdV-67-U7f">
+                                <rect key="frame" x="720" y="117" width="169" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="En linea"/>
+                                    <segment title="Descargados"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" id="rjt-M7-eV3">
+                                <rect key="frame" x="1005" y="20" width="1019" height="717"/>
+                                <color key="backgroundColor" red="0.49926227487018354" green="0.73402579436905235" blue="0.94850127551020413" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="44E-A5-0BN">
+                                <rect key="frame" x="945" y="369" width="40" height="37"/>
+                                <state key="normal" backgroundImage="GRAAPAG.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generaGraficaWithLoading:" destination="3" eventType="touchUpInside" id="Pa1-fm-Hot"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7ns-oo-kLx">
+                                <rect key="frame" x="839" y="169" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Disp periodo" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="0xf-aS-TOE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="woc-qH-l4s">
+                                <rect key="frame" x="839" y="200" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mod anual" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="iDG-jo-jjf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I1R-8L-f69">
+                                <rect key="frame" x="839" y="230" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Disp anual" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="anB-j6-p7s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LsX-Kd-GsK">
+                                <rect key="frame" x="839" y="259" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Disp 60 dias" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="th0-Hf-U1W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ygy-3c-xGe">
+                                <rect key="frame" x="839" y="288" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mod periodo" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="0kE-Di-TJ3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sLs-Fz-B7F">
+                                <rect key="frame" x="839" y="319" width="107" height="28"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="tintColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Ejercido" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectGraph:" destination="3" eventType="touchUpInside" id="mRV-bL-3M6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7D6-ef-UU9"/>
-                            <constraint firstItem="22" firstAttribute="top" secondItem="16" secondAttribute="top" constant="350" id="Gbp-Dd-WCJ"/>
-                            <constraint firstItem="22" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="235" id="Xcq-Zb-R4f"/>
-                            <constraint firstItem="23" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="YQd-P8-ET5"/>
-                            <constraint firstItem="23" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="eH6-Me-VTD"/>
-                            <constraint firstItem="23" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="kTD-uS-vbp"/>
-                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="250" id="mE7-QV-f5n"/>
-                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="v87-JO-j7C"/>
-                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Reportes" image="graph_bar_trend.png" id="6"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="buttonActiveOnline" destination="WZ7-ot-sOB" id="qgp-y5-oNW"/>
+                        <outlet property="buttonDis60Graf" destination="LsX-Kd-GsK" id="tiK-vS-ZYB"/>
+                        <outlet property="buttonDisGraf" destination="I1R-8L-f69" id="GVa-80-NbP"/>
+                        <outlet property="buttonDispGraf" destination="7ns-oo-kLx" id="EmH-5Z-6YK"/>
+                        <outlet property="buttonDownload" destination="qiX-ym-MgQ" id="G2z-Ke-wt5"/>
+                        <outlet property="buttonEjeGraf" destination="sLs-Fz-B7F" id="mHK-Kh-AcU"/>
+                        <outlet property="buttonGrafica" destination="44E-A5-0BN" id="Jco-nx-6tb"/>
+                        <outlet property="buttonModGraf" destination="woc-qH-l4s" id="nNy-I6-lcJ"/>
+                        <outlet property="buttonModpGraf" destination="ygy-3c-xGe" id="tSZ-kr-b6x"/>
+                        <outlet property="buttonMoveCollection" destination="EC9-Ax-YhO" id="6DA-ND-AKw"/>
+                        <outlet property="buttonOriGraf" destination="Yg4-UA-8B2" id="i8A-P2-EoW"/>
+                        <outlet property="buttonSelectActi" destination="Y2P-YP-ekD" id="YB8-zh-nbO"/>
+                        <outlet property="buttonSelectCapitulo" destination="WYn-IL-VfJ" id="5SY-Ph-Axr"/>
+                        <outlet property="buttonSelectCcp" destination="Scm-mA-mc3" id="8Z5-0N-972"/>
+                        <outlet property="buttonSelectConcepto" destination="Zzr-vk-vjX" id="sdF-xh-Qe5"/>
+                        <outlet property="buttonSelectDide" destination="uvt-gl-138" id="ug4-yu-h2V"/>
+                        <outlet property="buttonSelectDver" destination="AHM-M4-W3o" id="sB2-Ze-RJ9"/>
+                        <outlet property="buttonSelectEntidad" destination="WPE-g9-5pp" id="BQv-yg-NiX"/>
+                        <outlet property="buttonSelectFecha" destination="hn7-8e-416" id="M3r-xn-OCX"/>
+                        <outlet property="buttonSelectPeriodo" destination="bNz-cb-TWu" id="TJb-4c-QgH"/>
+                        <outlet property="buttonSelectPred" destination="CiL-fx-cBM" id="0Nh-gj-9Wm"/>
+                        <outlet property="buttonSelectProg" destination="RpB-Nv-q7u" id="vDF-Mq-eRR"/>
+                        <outlet property="buttonSelectPrograma" destination="C2l-Vy-eLG" id="FZR-6Y-Uv4"/>
+                        <outlet property="buttonSelectProyInv" destination="Q6A-ao-WsP" id="Jfs-Wv-I9I"/>
+                        <outlet property="buttonSelectUnidad" destination="6BF-U3-0YL" id="AE4-jT-EKe"/>
+                        <outlet property="buttonSendCsv" destination="Fyv-Md-4P1" id="s0S-ul-WXx"/>
+                        <outlet property="buttonSendPdf" destination="c2R-5E-v91" id="yCk-sn-kxa"/>
+                        <outlet property="buttonTitleClave" destination="00x-Wv-Wg2" id="98e-2d-F7L"/>
+                        <outlet property="buttonTitleDescripcion" destination="zIV-tw-LKg" id="wgR-dK-NWj"/>
+                        <outlet property="buttonTitleDispo60" destination="jrO-rf-kwK" id="rHZ-oE-T69"/>
+                        <outlet property="buttonTitleDisponible" destination="LoQ-qO-UOx" id="aE5-8r-YJn"/>
+                        <outlet property="buttonTitleDisponiblep" destination="cws-wZ-Dse" id="3Ol-dz-T2f"/>
+                        <outlet property="buttonTitleEjercido" destination="F8K-mc-0ay" id="L2p-gy-sYd"/>
+                        <outlet property="buttonTitleModificado" destination="gFH-ar-R5D" id="Q89-ec-Yrl"/>
+                        <outlet property="buttonTitleModp" destination="CeX-y5-JIf" id="HH3-M9-aX3"/>
+                        <outlet property="buttonTitleOriginal" destination="hcF-fp-VzO" id="jnZ-hY-Cqe"/>
+                        <outlet property="collectionViewClave" destination="sBN-uc-y9P" id="3vj-Lj-yWD"/>
+                        <outlet property="collectionViewDescripcion" destination="gou-YH-i3U" id="ERN-aW-4LB"/>
+                        <outlet property="collectionViewOriginal" destination="jAf-qf-FHC" id="XHP-7F-O5S"/>
+                        <outlet property="collectionViewRepor" destination="GLr-6N-Aj8" id="NWd-hO-qcV"/>
+                        <outlet property="collectionViewReporPdf" destination="xe6-sA-iuZ" id="5Sm-A4-FzN"/>
+                        <outlet property="imageActi" destination="v4R-gQ-qeh" id="3SJ-DR-DTW"/>
+                        <outlet property="imageDide" destination="xe3-iT-0P2" id="hch-Jd-sBR"/>
+                        <outlet property="imageDver" destination="Qwn-Zh-Jvd" id="qeh-QI-QRH"/>
+                        <outlet property="imageEntidad" destination="Te2-i8-Vcb" id="37g-8e-oGY"/>
+                        <outlet property="imageFecha" destination="xMs-jE-ktS" id="wWq-Zl-rIK"/>
+                        <outlet property="imagePred" destination="KQi-cu-OY7" id="nlg-Gb-Df1"/>
+                        <outlet property="imageProg" destination="VRS-1P-4SO" id="9Qt-eb-6Kb"/>
+                        <outlet property="imageProyInv" destination="am7-z4-14F" id="7RE-Ry-3dH"/>
+                        <outlet property="labelSubtotales" destination="XOs-Kh-p4o" id="C8k-0d-gAK"/>
+                        <outlet property="labelTitleRepor" destination="RWl-Oy-VnC" id="eXS-hG-We2"/>
+                        <outlet property="segmentedActiProy" destination="3wR-Iq-Hz4" id="K3F-DQ-dUO"/>
+                        <outlet property="segmentedArchivos" destination="kdV-67-U7f" id="KNp-sH-tu3"/>
+                        <outlet property="segmentedCapPrograma" destination="c3K-DM-9uo" id="S1H-f8-zMN"/>
+                        <outlet property="segmentedConPar" destination="exF-3c-AQ3" id="xTw-R2-eni"/>
+                        <outlet property="segmentedControlRepor" destination="KlJ-62-MpU" id="oE3-BL-bec"/>
+                        <outlet property="segmentedControlSubtotal" destination="Dw1-CW-HuY" id="6ds-3a-Ag2"/>
+                        <outlet property="segmentedControlSubtotal2" destination="7rz-fB-1LD" id="VV1-L7-qJX"/>
+                        <outlet property="segmentedDideDver" destination="Uaz-0B-aQo" id="YKc-3g-1uf"/>
+                        <outlet property="segmentedDverEnt" destination="YqP-g4-Dlr" id="CoR-0C-s2B"/>
+                        <outlet property="segmentedEntFin" destination="6TT-a2-ak2" id="LnF-ex-PtS"/>
+                        <outlet property="segmentedParProg" destination="r5G-yi-zEU" id="6F3-I9-2MH"/>
+                        <outlet property="segmentedPred" destination="prt-Mh-a25" id="gvL-LR-VZA"/>
+                        <outlet property="segmentedProgActi" destination="ZUs-Z3-iSm" id="V6M-vc-778"/>
+                        <outlet property="segmentedProgramaCon" destination="w5N-A0-rTr" id="tV0-2P-2IA"/>
+                        <outlet property="segmentedProyDide" destination="YVz-qN-Qyh" id="Pqf-Tp-iRI"/>
+                        <outlet property="segmentedUrCap" destination="4Nw-SX-GBg" id="CqP-1k-fBa"/>
+                        <outlet property="tableFechas" destination="M5u-t1-PEG" id="rXB-0h-EVe"/>
+                        <outlet property="textFieldQueries" destination="Rbc-ll-qKE" id="qqN-Pl-e5w"/>
+                        <outlet property="viewHideElements" destination="rjt-M7-eV3" id="Nbk-2a-IA1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3042" y="1284"/>
+            <point key="canvasLocation" x="4016" y="1284"/>
+        </scene>
+        <!--Informe View Controller - Informes en pdf-->
+        <scene sceneID="kHD-67-vZW">
+            <objects>
+                <viewController id="Pyn-bb-fep" customClass="InformeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ds4-S5-Onp">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FONDO-1.png" id="6dq-y3-7Pu">
+                                <rect key="frame" x="0.0" y="-55" width="1042" height="770"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="cvW-pE-hjn">
+                                <rect key="frame" x="953" y="718" width="51" height="37"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="j6I-h9-Ybd">
+                                <rect key="frame" x="963" y="728" width="51" height="37"/>
+                            </imageView>
+                            <webView contentMode="scaleToFill" id="XHY-2R-mGX">
+                                <rect key="frame" x="226" y="47" width="787" height="609"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7bV-bM-UrS">
+                                <rect key="frame" x="11" y="47" width="192" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pyn-bb-fep" id="kcE-zd-OMX"/>
+                                    <outlet property="delegate" destination="Pyn-bb-fep" id="lcN-9X-aQ8"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="BOQ-Ha-nKS">
+                                <rect key="frame" x="362" y="6" width="275" height="29"/>
+                                <segments>
+                                    <segment title="En línea"/>
+                                    <segment title="Descargados"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeSelector:" destination="Pyn-bb-fep" eventType="valueChanged" id="ULL-wG-3gq"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Io-id-8Ds">
+                                <rect key="frame" x="855" y="728" width="92" height="37"/>
+                                <state key="normal" title="Descargar" backgroundImage="button_grey_dark.png">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadRepor:" destination="Pyn-bb-fep" eventType="touchUpInside" id="AQL-ta-gwH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tob-4R-8fj">
+                                <rect key="frame" x="874" y="728" width="73" height="37"/>
+                                <state key="normal" title="Eliminar" backgroundImage="button_grey_dark.png">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteRepor:" destination="Pyn-bb-fep" eventType="touchUpInside" id="VP5-L7-Dcx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="CHh-YR-aox">
+                                <rect key="frame" x="962" y="664" width="51" height="37"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Informes en pdf" image="folder.png" id="AUX-zB-qdD"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="buttonDelete" destination="tob-4R-8fj" id="I0Y-s9-nKT"/>
+                        <outlet property="buttonDownload" destination="1Io-id-8Ds" id="FdW-eu-1TE"/>
+                        <outlet property="segmentedControl" destination="BOQ-Ha-nKS" id="pFM-MQ-snT"/>
+                        <outlet property="tableView" destination="7bV-bM-UrS" id="aKu-fg-Vre"/>
+                        <outlet property="webView" destination="XHY-2R-mGX" id="9r6-TW-lRp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ei1-zT-Oby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4226" y="3226"/>
+        </scene>
+        <!--Normativa View Controller - Normatividad-->
+        <scene sceneID="y0j-HI-9ti">
+            <objects>
+                <viewController id="ML0-hX-VeL" customClass="NormativaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Jq-iQ-mtq">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="FONDO-1.png" id="SUu-6l-UEJ">
+                                <rect key="frame" x="0.0" y="-13" width="1024" height="770"/>
+                            </imageView>
+                            <webView contentMode="scaleToFill" id="bhg-YO-xDp">
+                                <rect key="frame" x="228" y="44" width="787" height="609"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F1G-7n-bhS">
+                                <rect key="frame" x="13" y="44" width="192" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ML0-hX-VeL" id="gk7-pI-GRL"/>
+                                    <outlet property="delegate" destination="ML0-hX-VeL" id="DZF-Ie-0kg"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Hq8-8U-lwa">
+                                <rect key="frame" x="364" y="6" width="275" height="29"/>
+                                <segments>
+                                    <segment title="En línea"/>
+                                    <segment title="Descargados"/>
+                                </segments>
+                                <color key="tintColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeSelector:" destination="ML0-hX-VeL" eventType="valueChanged" id="4ED-Ae-y0B"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QvO-UF-hbp">
+                                <rect key="frame" x="857" y="725" width="92" height="37"/>
+                                <state key="normal" title="Descargar" backgroundImage="button_grey_dark.png">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadRepor:" destination="ML0-hX-VeL" eventType="touchUpInside" id="wLF-EX-roH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8RX-YR-chh">
+                                <rect key="frame" x="876" y="725" width="73" height="37"/>
+                                <state key="normal" title="Eliminar" backgroundImage="button_grey_dark.png">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteRepor:" destination="ML0-hX-VeL" eventType="touchUpInside" id="zBe-yq-ovr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="pMv-3b-p5a">
+                                <rect key="frame" x="964" y="661" width="51" height="37"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Normatividad" image="newspaper.png" id="5Dc-J8-DcX"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="buttonDelete" destination="8RX-YR-chh" id="nYF-ir-dsq"/>
+                        <outlet property="buttonDownload" destination="QvO-UF-hbp" id="RuB-3C-aop"/>
+                        <outlet property="segmentedControl" destination="Hq8-8U-lwa" id="KUE-ww-iY0"/>
+                        <outlet property="tableView" destination="F1G-7n-bhS" id="kae-XM-3pm"/>
+                        <outlet property="webView" destination="bhg-YO-xDp" id="g60-ig-zcd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3co-Zj-att" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2810" y="1342"/>
+        </scene>
+        <!--Config View Controller - Configuración-->
+        <scene sceneID="0j0-Ex-6dW">
+            <objects>
+                <viewController id="x9C-mh-LMo" customClass="configViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pbo-En-QDk">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Último catálogo cargado: " lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="39q-VA-Ocg">
+                                <rect key="frame" x="62" y="32" width="324" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d7p-pG-yqk">
+                                <rect key="frame" x="485" y="32" width="166" height="44"/>
+                                <state key="normal" title="Actualizar catálogos" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setCatalogos:" destination="x9C-mh-LMo" eventType="touchUpInside" id="aty-01-nsg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R8M-AH-dw8">
+                                <rect key="frame" x="828" y="156" width="140" height="32"/>
+                                <state key="normal" title="Agregar ruta" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setRuta:" destination="x9C-mh-LMo" eventType="touchUpInside" id="x1Y-1K-ByG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Fzo-CA-WdE">
+                                <rect key="frame" x="462" y="156" width="337" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NgY-1O-bPW">
+                                <rect key="frame" x="64" y="113" width="390" height="148"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="x9C-mh-LMo" id="ODQ-fN-xig"/>
+                                    <outlet property="delegate" destination="x9C-mh-LMo" id="8gp-3K-yNO"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ruta actual: " lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="pMy-Fz-20I">
+                                <rect key="frame" x="462" y="113" width="652" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ScF-1T-Xrl">
+                                <rect key="frame" x="816" y="405" width="171" height="44"/>
+                                <state key="normal" title="Agregar ruta de archivo" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setRutaArchivos:" destination="x9C-mh-LMo" eventType="touchUpInside" id="2c7-3P-koT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Bsb-Cy-aE2">
+                                <rect key="frame" x="462" y="412" width="337" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="O4a-0U-5uX">
+                                <rect key="frame" x="64" y="338" width="390" height="178"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="x9C-mh-LMo" id="8Mu-Ij-63d"/>
+                                    <outlet property="delegate" destination="x9C-mh-LMo" id="iTB-sy-Sq1"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ruta de archivo actual: " lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="1CT-Xj-vcf">
+                                <rect key="frame" x="462" y="355" width="652" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rutas disponibles para archivos:" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="Q1z-aY-9BK">
+                                <rect key="frame" x="67" y="311" width="326" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xPL-rI-S6U">
+                                <rect key="frame" x="806" y="558" width="212" height="44"/>
+                                <state key="normal" title="Agregar ruta de archivo" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setRutaArchivos2:" destination="x9C-mh-LMo" eventType="touchUpInside" id="9cu-kD-bmC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="nkw-tJ-Lw8">
+                                <rect key="frame" x="462" y="563" width="337" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LzM-tv-pim">
+                                <rect key="frame" x="64" y="565" width="390" height="139"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="x9C-mh-LMo" id="bP4-QL-wEy"/>
+                                    <outlet property="delegate" destination="x9C-mh-LMo" id="HLv-67-I91"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ruta de archivo actual: " lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="OSy-ZH-UyE">
+                                <rect key="frame" x="462" y="524" width="652" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rutas disponibles para archivos:" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="hUO-MT-qP0">
+                                <rect key="frame" x="67" y="536" width="326" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rutas disponibles:" lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="11" id="3Zy-gQ-3DS">
+                                <rect key="frame" x="64" y="79" width="326" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.15159638449999999" green="0.14744071510000001" blue="0.83695652170000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PAx-dT-XTH">
+                                <rect key="frame" x="420" y="273" width="55" height="39"/>
+                                <state key="normal" title="Borrar" backgroundImage="frame_middle.png">
+                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteRuta:" destination="x9C-mh-LMo" eventType="touchUpInside" id="1kn-Xy-SYW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Trademark-Symbol.png" id="ZhY-K1-hpF">
+                                <rect key="frame" x="964" y="721" width="51" height="37"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Configuración" image="cog_02.png" id="hl0-4u-3hk"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="labelCatalogos" destination="39q-VA-Ocg" id="Ga7-v1-HEG"/>
+                        <outlet property="labelRutas" destination="pMy-Fz-20I" id="hON-mm-MJi"/>
+                        <outlet property="labelRutasArchivo" destination="1CT-Xj-vcf" id="cAa-08-oEu"/>
+                        <outlet property="labelRutasArchivo2" destination="OSy-ZH-UyE" id="bfv-SJ-8AE"/>
+                        <outlet property="tableRutas" destination="NgY-1O-bPW" id="T1Z-pL-zha"/>
+                        <outlet property="tableRutasArchivo" destination="O4a-0U-5uX" id="Gbh-7E-AcR"/>
+                        <outlet property="tableRutasArchivo2" destination="LzM-tv-pim" id="3VK-j5-2zG"/>
+                        <outlet property="textFieldRutas" destination="Fzo-CA-WdE" id="cf0-qG-WUf"/>
+                        <outlet property="textFieldRutasArchivo" destination="Bsb-Cy-aE2" id="Y0t-bf-ZKj"/>
+                        <outlet property="textFieldRutasArchivo2" destination="nkw-tJ-Lw8" id="xPT-CH-Hb4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWO-hI-X1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2371" y="2330"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -110,19 +1391,41 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="28"/>
+                        <segue destination="Pyn-bb-fep" kind="relationship" relationship="viewControllers" id="0Ty-lm-Vc1"/>
+                        <segue destination="ML0-hX-VeL" kind="relationship" relationship="viewControllers" id="jye-8K-n3s"/>
+                        <segue destination="x9C-mh-LMo" kind="relationship" relationship="viewControllers" id="zlA-ZY-gQ6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="718"/>
+            <point key="canvasLocation" x="1767" y="689"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
+        <image name="ACTUA.png" width="494" height="494"/>
+        <image name="BORRAR8.png" width="494" height="494"/>
+        <image name="FONDO-1.png" width="1280" height="800"/>
+        <image name="GRAAPAG.png" width="494" height="494"/>
+        <image name="MAIL.png" width="494" height="494"/>
+        <image name="PDFAPAG.png" width="494" height="494"/>
+        <image name="Trademark-Symbol.png" width="241" height="241"/>
+        <image name="arrowr.png" width="256" height="256"/>
+        <image name="blue6.jpg" width="318" height="159"/>
+        <image name="button_grey_dark.png" width="300" height="45"/>
+        <image name="button_grey_light.png" width="300" height="45"/>
+        <image name="carbon.jpg" width="1000" height="1000"/>
+        <image name="cog_02.png" width="26" height="26"/>
+        <image name="descargar1-1.png" width="125" height="125"/>
+        <image name="folder.png" width="26" height="26"/>
+        <image name="frame_middle.png" width="1" height="216"/>
+        <image name="graph_bar_trend.png" width="26" height="26"/>
+        <image name="house.png" width="26" height="26"/>
+        <image name="ipad-button-blue-pressed.png" width="156" height="49"/>
+        <image name="newspaper.png" width="26" height="26"/>
+        <image name="wif1.png" width="494" height="494"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
