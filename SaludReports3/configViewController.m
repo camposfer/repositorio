@@ -34,14 +34,14 @@
     loadingIndicator = [[LoadingIndicator alloc] init];
     [self.view addSubview:loadingIndicator];
     [loadingIndicator hide];
-    UIImage *imageBackground = [UIImage imageNamed:@"wall_white2.jpg"];
+    /*UIImage *imageBackground = [UIImage imageNamed:@"wall_white2.jpg"];
     // UIImageView *imageView = [[UIImageView alloc] initWithFrame: [self.view bounds]];
     
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 1024, 720)];
     imageView.image = imageBackground;
     [self.view addSubview:imageView];
-    [self.view sendSubviewToBack:imageView];
+    [self.view sendSubviewToBack:imageView];*/
     
     mainDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [mainDelegate.databaseConnection readFromDatabase];

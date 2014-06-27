@@ -44,6 +44,8 @@
 
 #import "PCPieChart.h"
 
+#import "ColumnRepor.h"
+
 
 
 @interface SecondViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, ALPickerViewDelegate, UITableViewDataSource, UITableViewDelegate , UICollectionViewDataSource, UICollectionViewDelegate , UIActionSheetDelegate, MFMailComposeViewControllerDelegate,UIAlertViewDelegate, UISearchBarDelegate, UITextFieldDelegate> {
@@ -274,8 +276,6 @@
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayConcepto;
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayPrograma;
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayPeriodo;
-
-
 /*@property (nonatomic, retain) IBOutlet NSMutableArray *arrayGfun;
  @property (nonatomic, retain) IBOutlet NSMutableArray *arrayFonc;
  @property (nonatomic, retain) IBOutlet NSMutableArray *arraySfun;*/
@@ -285,16 +285,44 @@
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayDide;
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayDver;
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayCcp;
-//in order to search internal in array ccp
+
+//in order to search internal in all array
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayCcpAll;
 @property (retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic) BOOL  isFiltered;
+
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayUnidAll;
+@property (nonatomic) BOOL  isFilteredUnid;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayCapituloAll;
+@property (nonatomic) BOOL  isFilteredCapitulo;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayConceptoAll;
+@property (nonatomic) BOOL  isFilteredConcepto;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayProgramaAll;
+@property (nonatomic) BOOL  isFilteredPrograma;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayPeriodoAll;
+@property (nonatomic) BOOL  isFilteredPeriodo;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayProgAll;
+@property (nonatomic) BOOL  isFilteredProg;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayActiAll;
+@property (nonatomic) BOOL  isFilteredActi;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayDideAll;
+@property (nonatomic) BOOL  isFilteredDide;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayDverAll;
+@property (nonatomic) BOOL  isFilteredDver;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayProyInvAll;
+@property (nonatomic) BOOL  isFilteredProyInv;
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayEntidadAll;
+@property (nonatomic) BOOL  isFilteredEntidad;
+
 
 
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayProyInv;
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayEntidad;
 
 @property (nonatomic, retain) IBOutlet NSMutableArray *arrayPred;
+
+@property (nonatomic, retain) IBOutlet NSMutableArray *arrayColumnRepor;
+
 
 @property (nonatomic) NSString *urSelected;
 @property (nonatomic) NSString *capituloSelected;
@@ -442,6 +470,7 @@
 @property (nonatomic) int  howManyTouches;
 
 
+
 @property (nonatomic) BOOL  isActive2014;
 
 -(IBAction)segmentedControlIndexChanged:(UISegmentedControl *)sender;
@@ -476,7 +505,14 @@
 @property (retain) IBOutlet UIButton *buttonTitleEjercido;
 @property (retain) IBOutlet UIButton *buttonTitleDisponiblep;
 
+//new calendar buttons
+@property (retain) IBOutlet UIButton *buttonTitleAugust;
+@property (retain) IBOutlet UIButton *buttonTitleSeptember;
+@property (retain) IBOutlet UIButton *buttonTitleOctober;
+@property (retain) IBOutlet UIButton *buttonTitleNovember;
+@property (retain) IBOutlet UIButton *buttonTitleDecember;
 
+@property (retain) IBOutlet UIScrollView *scrollReports;
 @property (retain) IBOutlet UIButton *buttonGrafica;
 
 
@@ -498,7 +534,7 @@
 -(IBAction)StartWithLoading:(UIButton*)buttonUpda;
 -(IBAction)generaPresupuestoWithLoading:(UIButton *)sender;
 -(IBAction)generaGraficaWithLoading:(UIButton *)sender;
-
+-(IBAction)showSearchBar :(UIButton*)sender;
 
 @property (retain) IBOutlet UISegmentedControl *segmentedUrCap;
 @property (retain) IBOutlet UISegmentedControl *segmentedCapPrograma;
@@ -513,6 +549,9 @@
 @property (retain) IBOutlet UISegmentedControl *segmentedEntFin;
 
 @property (retain) IBOutlet UISegmentedControl *segmentedPred;
+
+@property (retain) IBOutlet UISegmentedControl *segmentedAnualAcumula;
+
 
 @property (retain) IBOutlet NSString *stringUrCap;
 @property (retain) IBOutlet NSString *stringCapPrograma;
@@ -608,7 +647,7 @@
 -(IBAction) okDescarga: (UIButton*)sender ;
 -(IBAction) cancelDescarga: (UIButton*)sender ;
 
-
+-(IBAction)changeSegmentedAnual:(UISegmentedControl*)sender;
 
 
 -(IBAction) switchTapped: (UISwitch*)sender ;
@@ -623,9 +662,13 @@
 @property (retain) IBOutlet UIButton *buttonHighlight2;
 @property (retain) IBOutlet UIButton *buttonHighlight3;
 
+//touching and moving
+@property (retain) ColumnRepor *currentColumnMovable;
+
+- (IBAction) yourBtnInScrollViewPressed : (id) sender;
 
 
-//graphs
+//charts
 
 -(void)initPlot;
 -(void)configureHost;

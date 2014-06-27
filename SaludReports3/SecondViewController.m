@@ -7,7 +7,10 @@
 //
 
 #import "SecondViewController.h"
-#define allTrim( object ) [object stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ]
+
+
+
+
 
 @interface SecondViewController ()
 
@@ -111,7 +114,11 @@
 @synthesize buttonSendPdf;
 @synthesize arrayCellSelected;
 
+
+//search elements
 @synthesize arrayCcpAll, searchBar, isFiltered; //for ccp filtered
+@synthesize arrayUnidAll, arrayCapituloAll, arrayConceptoAll, arrayProgramaAll, arrayActiAll, arrayDideAll, arrayDverAll, arrayEntidadAll, arrayProgAll, arrayProyInvAll;
+@synthesize isFilteredActi, isFilteredCapitulo, isFilteredConcepto, isFilteredDide, isFilteredDver, isFilteredEntidad, isFilteredPeriodo, isFilteredProg, isFilteredPrograma, isFilteredProyInv, isFilteredUnid;
 
 @synthesize activeOnline, activeGraphic, activeSend;
 @synthesize archivoCurrent;
@@ -132,6 +139,16 @@
 
 //chart items
 @synthesize pieChart;
+
+
+//anual, calendarized
+@synthesize segmentedAnualAcumula, buttonTitleSeptember, buttonTitleOctober, buttonTitleNovember, buttonTitleDecember, buttonTitleAugust;
+@synthesize scrollReports;
+
+@synthesize arrayColumnRepor;
+
+@synthesize currentColumnMovable;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -139,13 +156,21 @@
     [self.view addSubview:loadingIndicator];
     [loadingIndicator show:@"Cargando"];
     [self performSelector:@selector(initBefore) withObject:NULL afterDelay:.01];
-    
-    
-}
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(UIColorGrayFromRGB)];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:0.0/255.0 green:102.0/255.0 blue:153.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue" size:24.0], NSFontAttributeName, nil]];}
 
 
 
 -(void) initBefore{
+    [scrollReports setContentSize:CGSizeMake(1200, 400)];
+    [scrollReports setFrame:CGRectMake(5, 440, 1006, 256)];
+    
     searchBar.delegate = self;
     webViewPdf = [[UIWebView alloc] initWithFrame:CGRectMake(30, 120, 800, 480)];
     webViewPdf.hidden = YES;
@@ -277,19 +302,30 @@
 
 
 -(void) initPickers{
-    alpickerViewUnidad  = [[ALPickerView alloc]  initWithFrame:CGRectMake(132, 192, 380, 216) andIsActivatedAll:YES];
+    int xPos1Column = 252;
+    int yPos1Column = 122;
+    int xPos2Column = xPos1Column+250;
+    int yPos2Column = yPos1Column;
+    int xPos3Column = xPos1Column-150;
+    int yPos3Column = yPos1Column;
+    
+    int widthPicker = 420;
+    int heightPicker = 216;
+    
+    
+    alpickerViewUnidad  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos1Column, yPos1Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewUnidad.delegate = self;
     
-    alpickerViewCapitulo  = [[ALPickerView alloc] initWithFrame:CGRectMake(132, 223, 380, 216) andIsActivatedAll:YES];
+    alpickerViewCapitulo  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos1Column, yPos1Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewCapitulo.delegate = self;
     
-    alpickerViewPrograma  = [[ALPickerView alloc] initWithFrame:CGRectMake(132, 253, 380, 216) andIsActivatedAll:YES];
+    alpickerViewPrograma  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos1Column, yPos1Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewPrograma.delegate = self;
     
-    alpickerViewConcepto  = [[ALPickerView alloc] initWithFrame:CGRectMake(132, 290, 380, 216) andIsActivatedAll:YES];
+    alpickerViewConcepto  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos1Column, yPos1Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewConcepto.delegate = self;
     
-    alpickerViewCcp  = [[ALPickerView alloc] initWithFrame:CGRectMake(62, 16, 380, 216) andIsActivatedAll:YES];
+    alpickerViewCcp  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos1Column, yPos1Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewCcp.delegate = self;
     
     
@@ -309,25 +345,25 @@
      alpickerViewSfun  = [[ALPickerView alloc] initWithFrame:CGRectMake(423, 253, 380, 216)];
      alpickerViewSfun.delegate = self;*/
     
-    alpickerViewProg  = [[ALPickerView alloc] initWithFrame:CGRectMake(423, 192, 380, 216) andIsActivatedAll:YES];
+    alpickerViewProg  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos2Column, yPos2Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewProg.delegate = self;
     
-    alpickerViewActi  = [[ALPickerView alloc] initWithFrame:CGRectMake(423, 223, 380, 216) andIsActivatedAll:YES];
+    alpickerViewActi  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos2Column, yPos2Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewActi.delegate = self;
     
-    alpickerViewDide  = [[ALPickerView alloc] initWithFrame:CGRectMake(600, 192, 380, 216) andIsActivatedAll:YES];
+    alpickerViewDide  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos3Column, yPos3Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewDide.delegate = self;
     
-    alpickerViewDver  = [[ALPickerView alloc] initWithFrame:CGRectMake(600, 223, 380, 216) andIsActivatedAll:YES  ];
+    alpickerViewDver  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos3Column, yPos3Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewDver.delegate = self;
     
-    alpickerViewEntidad  = [[ALPickerView alloc] initWithFrame:CGRectMake(600, 253, 380, 216) andIsActivatedAll:YES];
+    alpickerViewEntidad  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos3Column, yPos3Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewEntidad.delegate = self;
     
-    alpickerViewProyInv  = [[ALPickerView alloc] initWithFrame:CGRectMake(423, 253, 380, 216) andIsActivatedAll:YES];
+    alpickerViewProyInv  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos2Column, yPos2Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewProyInv.delegate = self;
     
-    alpickerViewPred  = [[ALPickerView alloc] initWithFrame:CGRectMake(423, 313, 380, 216) andIsActivatedAll:YES];
+    alpickerViewPred  = [[ALPickerView alloc]  initWithFrame:CGRectMake(xPos2Column, yPos2Column, widthPicker, heightPicker) andIsActivatedAll:YES];
     alpickerViewPred.delegate = self;
     
     
@@ -350,21 +386,65 @@
     [self.view addSubview:alpickerViewPeriodo];
     
 }
+
+-(IBAction)changeSegmentedAnual:(UISegmentedControl*)sender{
+    if (sender.selectedSegmentIndex == 0) {
+        [buttonTitleClave setTitle:@"Clave" forState:UIControlStateNormal];
+        [buttonTitleDescripcion setTitle:@"Descripción" forState:UIControlStateNormal];
+        [buttonTitleOriginal setTitle:@"Original" forState:UIControlStateNormal];
+        [buttonTitleModificado setTitle:@"Modificado" forState:UIControlStateNormal];
+        [buttonTitleDisponible setTitle:@"Disponible" forState:UIControlStateNormal];
+        [buttonTitleDispo60 setTitle:@"Dispo 60 días" forState:UIControlStateNormal];
+        [buttonTitleModp setTitle:@"Mod periodo" forState:UIControlStateNormal];
+        [buttonTitleEjercido setTitle:@"Ejercido" forState:UIControlStateNormal];
+        [buttonTitleDisponiblep setTitle:@"Dis Periodo" forState:UIControlStateNormal];
+        
+    }else if (sender.selectedSegmentIndex == 1){
+
+        [buttonTitleClave setTitle:@"Clave" forState:UIControlStateNormal];
+        [buttonTitleDescripcion setTitle:@"Descripción" forState:UIControlStateNormal];
+       // [buttonTitleDescripcion setTitle:@"Descripción 2" forState:UIControlStateNormal];
+        [buttonTitleOriginal setTitle:@"Enero" forState:UIControlStateNormal];
+        [buttonTitleModificado setTitle:@"Febrero" forState:UIControlStateNormal];
+        [buttonTitleDisponible setTitle:@"Marzo" forState:UIControlStateNormal];
+        [buttonTitleDispo60 setTitle:@"Abril" forState:UIControlStateNormal];
+        [buttonTitleModp setTitle:@"Mayo" forState:UIControlStateNormal];
+        [buttonTitleEjercido setTitle:@"Junio" forState:UIControlStateNormal];
+        [buttonTitleDisponiblep setTitle:@"Julio" forState:UIControlStateNormal];
+        [buttonTitleAugust setTitle:@"Agosto" forState:UIControlStateNormal];
+        [buttonTitleSeptember setTitle:@"Septiembre" forState:UIControlStateNormal];
+        [buttonTitleOctober setTitle:@"Octubre" forState:UIControlStateNormal];
+        [buttonTitleNovember setTitle:@"Noviembre" forState:UIControlStateNormal];
+        [buttonTitleDecember setTitle:@"Diciembre" forState:UIControlStateNormal];
+        
+    }
+}
+
+
 -(void) initButtons{
-    buttonToHideUnidad = [[buttonWithStyle alloc] initWithFrame:CGRectMake(202, 413, 220, 45)];
+    int xPos1Column = 542;
+    int yPos1Column = 340;
+    int xPos2Column = xPos1Column+250;
+    int yPos2Column = yPos1Column;
+    int xPos3Column = xPos1Column-150;
+    int yPos3Column = yPos1Column;
+    
+    int widthButton = 90;
+    int heightButton = 35;
+    
+    
+    buttonToHideUnidad = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos1Column, yPos1Column , widthButton, heightButton)];
     [buttonToHideUnidad addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideCapitulo = [[buttonWithStyle alloc] initWithFrame:CGRectMake(202, 443, 220, 45)];
+    buttonToHideCapitulo = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos1Column, yPos1Column , widthButton, heightButton)];
     [buttonToHideCapitulo addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    buttonToHidePrograma = [[buttonWithStyle alloc] initWithFrame:CGRectMake(202, 475, 220, 45)];
-    [buttonToHidePrograma addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
+    buttonToHidePrograma = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos1Column, yPos1Column , widthButton, heightButton)];    [buttonToHidePrograma addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideConcepto = [[buttonWithStyle alloc] initWithFrame:CGRectMake(202, 512, 220, 45)];
-    [buttonToHideConcepto addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
+    buttonToHideConcepto = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos1Column, yPos1Column , widthButton, heightButton)];    [buttonToHideConcepto addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideCcp = [[buttonWithStyle alloc] initWithFrame:CGRectMake(142, 227, 220, 45)];
+    buttonToHideCcp = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos1Column, yPos1Column , widthButton, heightButton)];
     [buttonToHideCcp addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
     buttonToHideFecha = [[buttonWithStyle alloc] initWithFrame:CGRectMake(728, 415, 155, 45)];
@@ -383,27 +463,27 @@
      buttonToHideSfun = [[buttonWithStyle alloc] initWithFrame:CGRectMake(503, 475, 220, 45)];
      [buttonToHideSfun addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];*/
     
-    buttonToHideProg = [[buttonWithStyle alloc] initWithFrame:CGRectMake(503, 413, 220, 45)];
+    buttonToHideProg = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos2Column, yPos2Column , widthButton, heightButton)];
     [buttonToHideProg addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideActi = [[buttonWithStyle alloc] initWithFrame:CGRectMake(503, 433, 220, 45)];
+    buttonToHideActi = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos2Column, yPos2Column , widthButton, heightButton)];
     [buttonToHideActi addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
     
     
-    buttonToHideDide = [[buttonWithStyle alloc] initWithFrame:CGRectMake(687, 413, 220, 45)];
+    buttonToHideDide = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos3Column, yPos3Column , widthButton, heightButton)];
     [buttonToHideDide addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideDver = [[buttonWithStyle alloc] initWithFrame:CGRectMake(687, 443, 220, 45)];
+    buttonToHideDver = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos3Column, yPos3Column , widthButton, heightButton)];
     [buttonToHideDver addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideEntidad = [[buttonWithStyle alloc] initWithFrame:CGRectMake(687, 475, 220, 45)];
+    buttonToHideEntidad = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos3Column, yPos3Column , widthButton, heightButton)];
     [buttonToHideEntidad addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHideProyInv = [[buttonWithStyle alloc] initWithFrame:CGRectMake(503, 475, 220, 45)];
+    buttonToHideProyInv = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos2Column, yPos2Column , widthButton, heightButton)];
     [buttonToHideProyInv addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    buttonToHidePred = [[buttonWithStyle alloc] initWithFrame:CGRectMake(503, 575, 220, 45)];
+    buttonToHidePred = [[buttonWithStyle alloc] initWithFrame:CGRectMake(xPos2Column, yPos2Column , widthButton, heightButton)];
     [buttonToHidePred addTarget:self action:@selector(hidePickerViewsforButton:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:buttonToHideUnidad];
@@ -451,30 +531,140 @@
     
 }
 
+-(void)turnOffSearchBools{
+    isFiltered = FALSE;
+    isFilteredUnid = FALSE;
+    isFilteredActi = FALSE;
+    isFilteredCapitulo = FALSE;
+    isFilteredConcepto = FALSE;
+    isFilteredPrograma = FALSE;
+    isFilteredDver = FALSE;
+    isFilteredDide = FALSE;
+    isFilteredEntidad = FALSE;
+    isFilteredProyInv = FALSE;
+    isFilteredProg = FALSE;
+    
+    
+    
+}
+
+-(void)turnOfSearchArrays{
+    arrayCcp = [[NSMutableArray alloc] initWithArray:arrayCcpAll];
+    arrayUnid = [[NSMutableArray alloc] initWithArray:arrayUnidAll];
+    arrayActi = [[NSMutableArray alloc] initWithArray:arrayActiAll];
+    arrayCapitulo = [[NSMutableArray alloc] initWithArray:arrayCapituloAll];
+    arrayConcepto = [[NSMutableArray alloc] initWithArray:arrayConceptoAll];
+    arrayPrograma = [[NSMutableArray alloc] initWithArray:arrayProgramaAll];
+    arrayDide = [[NSMutableArray alloc] initWithArray:arrayDideAll];
+    arrayDver = [[NSMutableArray alloc] initWithArray:arrayDverAll];
+    arrayEntidad = [[NSMutableArray alloc] initWithArray:arrayEntidadAll];
+    arrayProyInv = [[NSMutableArray alloc] initWithArray:arrayProyInvAll];
+    arrayProg = [[NSMutableArray alloc] initWithArray:arrayProgAll];
+    
+}
+
+-(void)searchIn:(NSMutableArray*)arrayToSearchIn andOriginalArray:(NSMutableArray*)originalArray withText:(NSString *)text andAlPickerView:(ALPickerView*)alPickerView{
+    [originalArray removeAllObjects];
+    for (ElemClave* cla in arrayToSearchIn)
+    {
+        NSRange nameRange = [cla.descripcion rangeOfString:text options:NSCaseInsensitiveSearch];
+        NSRange descriptionRange = [cla.clave rangeOfString:text options:NSCaseInsensitiveSearch];
+        if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound){
+            //if (nameRange.location !=NSNotFound) {
+            [originalArray addObject:cla];
+        }
+    }
+    [alPickerView reloadAllComponents];
+    
+    
+}
+
+
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
     if(text.length == 0)
     {
-        isFiltered = FALSE;
-        arrayCcp = [[NSMutableArray alloc] initWithArray:arrayCcpAll];
+        //first when a search is blanked, we need to restore to the original array
+        if (isFiltered){
+            arrayCcp = [[NSMutableArray alloc] initWithArray:arrayCcpAll];
+            [alpickerViewCcp reloadAllComponents];
+        }else if (isFilteredUnid){
+            arrayUnid = [[NSMutableArray alloc] initWithArray:arrayUnidAll];
+            [alpickerViewUnidad reloadAllComponents];
+        }else if (isFilteredCapitulo){
+            arrayCapitulo = [[NSMutableArray alloc] initWithArray:arrayCapituloAll];
+            [alpickerViewCapitulo reloadAllComponents];
+        }else if (isFilteredConcepto){
+            arrayConcepto = [[NSMutableArray alloc] initWithArray:arrayConceptoAll];
+            [alpickerViewConcepto reloadAllComponents];
+        }else if (isFilteredPrograma){
+            arrayPrograma = [[NSMutableArray alloc] initWithArray:arrayProgramaAll];
+            [alpickerViewPrograma reloadAllComponents];
+        }else if (isFilteredProg){
+            arrayProg = [[NSMutableArray alloc] initWithArray:arrayProgAll];
+            [alpickerViewProg reloadAllComponents];
+            
+        }else if (isFilteredActi){
+            arrayActi = [[NSMutableArray alloc] initWithArray:arrayActiAll];
+            [alpickerViewActi reloadAllComponents];
+        }else if (isFilteredProyInv){
+            arrayProyInv = [[NSMutableArray alloc] initWithArray:arrayProyInvAll];
+            [alpickerViewProyInv reloadAllComponents];
+        }else if (isFilteredDide){
+            arrayDide = [[NSMutableArray alloc] initWithArray:arrayDideAll];
+            [alpickerViewDide reloadAllComponents];
+        }else if (isFilteredDver){
+            arrayDver = [[NSMutableArray alloc] initWithArray:arrayDverAll];
+            [alpickerViewDver reloadAllComponents];
+        }else if (isFilteredEntidad){
+            arrayEntidad = [[NSMutableArray alloc] initWithArray:arrayEntidadAll];
+            [alpickerViewEntidad reloadAllComponents];
+        }
+        //then clean all filters and arrays
+        
+        [self turnOffSearchBools];
+        [self turnOfSearchArrays];
     }
     else
     {
-        isFiltered = true;
-        //filteredTableData = [[NSMutableArray alloc] init];
-        arrayCcp = [[NSMutableArray alloc] init];
-        for (ElemClave* cla in arrayCcpAll)
-        {
-            NSRange nameRange = [cla.descripcion rangeOfString:text options:NSCaseInsensitiveSearch];
-            NSRange descriptionRange = [cla.clave rangeOfString:text options:NSCaseInsensitiveSearch];
-            if(nameRange.location != NSNotFound || descriptionRange.location != NSNotFound){
-                //if (nameRange.location !=NSNotFound) {
-                [arrayCcp addObject:cla];
-            }
+        if (!(alpickerViewCcp.hidden)){
+            isFiltered = true;
+            [self searchIn:arrayCcpAll andOriginalArray:arrayCcp withText:text andAlPickerView:alpickerViewCcp];
+        }else if (!(alpickerViewUnidad.hidden)) {
+            isFilteredUnid = true;
+            [self searchIn:arrayUnidAll andOriginalArray:arrayUnid withText:text andAlPickerView:alpickerViewUnidad];
+        }else if (!(alpickerViewCapitulo.hidden)) {
+            isFilteredCapitulo = true;
+            [self searchIn:arrayCapituloAll andOriginalArray:arrayCapitulo withText:text andAlPickerView:alpickerViewCapitulo];
+        }else if (!(alpickerViewConcepto.hidden)) {
+            isFilteredConcepto = true;
+            [self searchIn:arrayConceptoAll andOriginalArray:arrayConcepto withText:text andAlPickerView:alpickerViewConcepto];
+        }else if (!(alpickerViewPrograma.hidden)) {
+            isFilteredPrograma = true;
+            [self searchIn:arrayProgramaAll andOriginalArray:arrayPrograma withText:text andAlPickerView:alpickerViewPrograma];
+        }else if (!(alpickerViewProg.hidden)) {
+            isFilteredProg = true;
+            [self searchIn:arrayProgAll andOriginalArray:arrayProg withText:text andAlPickerView:alpickerViewProg];
+        
+        }else if (!(alpickerViewActi.hidden)) {
+            isFilteredActi = true;
+            [self searchIn:arrayActiAll andOriginalArray:arrayActi withText:text andAlPickerView:alpickerViewActi];
+        }else if (!(alpickerViewDide.hidden)) {
+            isFilteredDide = true;
+            [self searchIn:arrayDideAll andOriginalArray:arrayDide withText:text andAlPickerView:alpickerViewDide];
+        }else if (!(alpickerViewDver.hidden)) {
+            isFilteredDver = true;
+            [self searchIn:arrayDverAll andOriginalArray:arrayDver withText:text andAlPickerView:alpickerViewDver];
+        }else if (!(alpickerViewEntidad.hidden)) {
+            isFilteredEntidad = true;
+            [self searchIn:arrayEntidadAll andOriginalArray:arrayEntidad withText:text andAlPickerView:alpickerViewEntidad];
+        }else if (!(alpickerViewProyInv.hidden)) {
+            isFilteredProyInv = true;
+            [self searchIn:arrayProyInvAll andOriginalArray:arrayProyInv withText:text andAlPickerView:alpickerViewProyInv];
+ 
         }
+        
     }
-    
-    [self.alpickerViewCcp reloadAllComponents];
 }
 
 
@@ -567,7 +757,7 @@
 
 - (IBAction)viewWasTouched:(UITapGestureRecognizer *)sender
 {
-    if (sender.numberOfTouches == 1) {
+    //if (sender.numberOfTouches == 1) {
         CGPoint touchPoint = [sender locationOfTouch:0 inView:self.collectionViewClave];
         CGFloat touchX = touchPoint.x;
         CGFloat touchY = touchPoint.y;
@@ -579,17 +769,23 @@
                 
             }
         }
-    }
+   // }
 }
 
 
 -(IBAction)activeDeactiveOnline:(UIButton *)sender{
     if (activeOnline) {
-        UIImage *buttonImage = [UIImage imageNamed:@"wif1.png"];
+        UIImage *buttonImage = [UIImage imageNamed:@"wifiapag1.png"];
         //[sender setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [sender setImage:buttonImage forState:UIControlStateNormal];
         [buttonActiveOnline setImage:buttonImage forState:UIControlStateNormal];
         activeOnline = NO;
+        
+        //first of all only for local queries
+        segmentedAnualAcumula.hidden = NO;
+        [segmentedAnualAcumula setSelectedSegmentIndex:0];
+        [self changeSegmentedAnual:segmentedAnualAcumula];
+        
         [segmentedArchivos setSelectedSegmentIndex:1];
         [self segmentedControlIndexChanged:segmentedArchivos];
         
@@ -598,6 +794,11 @@
         //[sender setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [sender setImage:buttonImage forState:UIControlStateNormal];
         [buttonActiveOnline setImage:buttonImage forState:UIControlStateNormal];
+        
+        //first of all only for local queries
+        segmentedAnualAcumula.hidden = YES;
+        [segmentedAnualAcumula setSelectedSegmentIndex:0];
+        [self changeSegmentedAnual:segmentedAnualAcumula];
 
         activeOnline = YES;
         [segmentedArchivos setSelectedSegmentIndex:0];
@@ -639,6 +840,11 @@
     [collectionViewClave  setContentOffset: CGPointMake(0.00, collectionViewClave.center.y)];
     
     //}
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];  //let the tableview handle cell selection
+    [self.nextResponder touchesBegan:touches withEvent:event]; // give the controller a chance for handling touch events
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -1136,12 +1342,100 @@
     sortDispop = NO;
     
 }
+-(ColumnRepor*) addColumnRepor:(NSString *) name andType:(NSString*) type andMovable:(NSString*)mov{
+    
+    
+    int sizeX = 110;
+    int sizeY = 200;
+    int positionId =[arrayColumnRepor count]+1;
+    
+    int posX = (positionId*110)-100 +11;
+    int posY = 450;
+    UICollectionView *collection;
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    
+    if (positionId ==1){
+        sizeX = sizeX -60;
+    }else if (positionId ==2){
+        sizeX = sizeX +60;
+        posX = posX-60;
+    }
+    //[flow setItemSize:CGSizeMake(110, 40)];
+    //[flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    collection = [[UICollectionView alloc] initWithFrame:CGRectMake(posX, posY, sizeX, sizeY) collectionViewLayout:flow];
+    [collection registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"MyCell4"];
+    //[collection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"MyCell4"];
+    [collection setBackgroundColor:[UIColor whiteColor]];
+    [collection setDataSource:self];
+    [collection setDelegate:self];
+    
+    UILongPressGestureRecognizer* longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [collection  addGestureRecognizer:longPress];
+    
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    ColumnRepor *columnReporClave = [[ColumnRepor alloc] initWithId:positionId andCollectionView:collection  andNameTitle:name andTextAlignment:NSTextAlignmentRight andType:type andMovable:mov andArray: tempArray];
+    
+    [self.view addSubview:collection];
+    [self.view addSubview:columnReporClave.buttonTitle];
+    return columnReporClave;
 
+}
 
+-(void) longPress:(UILongPressGestureRecognizer*) gesture{
+      CGPoint location = [gesture locationInView:self.view];
+     if (gesture.state == UIGestureRecognizerStateBegan) {
+         for (ColumnRepor *cl in arrayColumnRepor) {
+             if (CGRectContainsPoint(cl.collectionView.layer.frame, location)) {
+                 currentColumnMovable = cl;
+             }
+         }
+         
+     } else if (gesture.state == UIGestureRecognizerStateChanged) {
+         // update position of the drag view
+         // don't let it go past the top or the bottom too far
+         if (location.x >= 30){// && location.y <= contentSize.height + 50) {
+             
+             float displacement = currentColumnMovable.collectionView.center.x - location.x;
+             currentColumnMovable.collectionView.center = CGPointMake(location.x, currentColumnMovable.collectionView.center.y);
+             currentColumnMovable.buttonTitle.center = CGPointMake(location.x, currentColumnMovable.buttonTitle.center.y);
+             
+             for (ColumnRepor * cl in arrayColumnRepor) {
+                 if (cl != currentColumnMovable) {
+                     if ([cl.movable isEqualToString:@"YES"]) {
+                         [cl.collectionView setCenter:CGPointMake(cl.collectionView.center.x - displacement, cl.collectionView.center.y)];
+                         [cl.buttonTitle setCenter:CGPointMake(cl.buttonTitle.center.x-displacement, cl.buttonTitle.center.y)];
+                     }
+                    
+                 }
+             }
+
+             
+         }
+     }
+    
+}
 
 -(IBAction)generaPresupuesto:(UIButton *)sender{
     [self cleanSorts];
-    
+    arrayColumnRepor = [[NSMutableArray alloc] init];
+    if (segmentedAnualAcumula.selectedSegmentIndex == 0){//Anual
+        [arrayColumnRepor addObject:[self addColumnRepor:@"clave" andType:@"1" andMovable:@"NO"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"descripcion" andType:@"1" andMovable:@"NO"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"original" andType:@"2" andMovable:@"YES"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"modificado" andType:@"2"andMovable:@"YES"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"disponible" andType:@"2"andMovable:@"YES"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"dispo60" andType:@"2"andMovable:@"YES"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"modp" andType:@"2"andMovable:@"YES"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"ejercido" andType:@"2"andMovable:@"YES"] ];
+        [arrayColumnRepor addObject:[self addColumnRepor:@"disponiblep" andType:@"2"andMovable:@"YES"] ];
+    }
+    for (ColumnRepor * cl in arrayColumnRepor) {
+        if ([cl.movable isEqualToString:@"NO"]) {
+            [self.view bringSubviewToFront:cl.collectionView];
+            [self.view bringSubviewToFront:cl.buttonTitle];
+        }
+    }
     NSString *query;
     //arrayPresupuesto = [[NSMutableArray alloc] init];
     NSString *key;
@@ -1194,6 +1488,7 @@
         query = [[mainDelegate.currentLink stringByAppendingString:archivoSeleccionado ] stringByAppendingString:@"&tipo=proyinv"];
         key = @"proyinv";
     }
+    ((ColumnRepor*)[arrayColumnRepor objectAtIndex:0]).nameTitle = key;
     
     
     if (segmentedArchivos.selectedSegmentIndex == 0) {  //web
@@ -1225,11 +1520,16 @@
                 }
                 
                 
+                
             }
             
             [collectionViewRepor reloadData];
             //[collectionViewRepor  scrollRectToVisible:CGRectMake(0,480 , 1000, 480) animated:YES];//
             //[collectionViewRepor setContentOffset:CGPointMake(0, 1500) animated:YES];
+            for(ColumnRepor *cl in arrayColumnRepor){
+                [cl.collectionView reloadData];
+            }
+
             [collectionViewReporPdf reloadData];
             [collectionViewClave reloadData];
             [collectionViewDescripcion reloadData];
@@ -1254,6 +1554,9 @@
         @catch (NSException *exception) {
             [collectionViewRepor reloadData];
             [collectionViewReporPdf reloadData];
+            for(ColumnRepor *cl in arrayColumnRepor){
+                [cl.collectionView reloadData];
+            }
             [popMenu show:@"No existen registros a mostrar con la consulta seleccionada, o existe error en la obtención de datos, verifique su conexión o pruebe cambiando los filtros" andTitle:@""];
             [self hideButtonsGraphicsCsvPdf];
         }
@@ -1287,6 +1590,9 @@
                     
                 }
                 [collectionViewRepor reloadData];
+                for(ColumnRepor *cl in arrayColumnRepor){
+                    [cl.collectionView reloadData];
+                }
                 //[collectionViewRepor setContentOffset:CGPointMake(0, 1500) animated:YES];
                 [collectionViewReporPdf reloadData];
                 [collectionViewClave reloadData];
@@ -1309,6 +1615,9 @@
             
         }@catch (NSException *exception) {
             [collectionViewRepor reloadData];
+            for(ColumnRepor *cl in arrayColumnRepor){
+                [cl.collectionView reloadData];
+            }
             [collectionViewReporPdf reloadData];
             [popMenu show:@"No existen registros a mostrar con la consulta seleccionada, o existe error en la obtención de datos, verifique su conexión o pruebe cambiando los filtros" andTitle:@""];
             [self hideButtonsGraphicsCsvPdf];
@@ -1418,6 +1727,9 @@
     
     arrayPresupuesto = [[NSMutableArray alloc] initWithArray: arraypasFinal];
     [collectionViewRepor reloadData];
+    for(ColumnRepor *cl in arrayColumnRepor){
+        [cl.collectionView reloadData];
+    }
     [collectionViewReporPdf reloadData];
     
     
@@ -1784,13 +2096,25 @@
         return @"NO";
     }
 }
+-(void)setPositionForSearchBar:(int)column{
+    if (column ==1){
+        [searchBar setFrame:CGRectMake(260, 337, 263, 44)];
+    }else if (column == 2){
+        [searchBar setFrame:CGRectMake(510, 337, 263, 44)];
+        
+    }else if (column == 3){
+            [searchBar setFrame:CGRectMake(110, 337, 263, 44)];
+    }
+    
+}
+
 
 -(void) hidePickerViewsforButton: (buttonWithStyle*)buttonHide {
     //here we need change the text for uilabel
     stringQueries = nil;
     stringQueries = [[NSMutableArray alloc] init];
     
-    
+    searchBar.hidden = YES;
     NSString *queryByPas;
     if (buttonHide == buttonToHideUnidad) {
         queryByPas = [self obtainQuery:@"unidad=" andSelector:selectionStates andButton:buttonSelectUnidad];
@@ -2077,11 +2401,13 @@
     buttonToHidePrograma.hidden = YES;
     buttonToHideFecha.hidden = YES;
     buttonToHidePeriodo.hidden = YES;
+    searchBar.hidden = YES;
     
 }
 
 
 -(void) hidePickerViewsSecondColumn{
+    searchBar.hidden = YES;
     alpickerViewCcp.hidden = YES;
     /* alpickerViewGfun.hidden = YES;
      alpickerViewFonc.hidden = YES;
@@ -2249,6 +2575,18 @@
         [self cleanSelectors];
         
     }
+    arrayUnidAll = [[NSMutableArray alloc] initWithArray:arrayUnid];
+    arrayCapituloAll = [[NSMutableArray alloc] initWithArray:arrayCapitulo];
+    arrayConceptoAll = [[NSMutableArray alloc] initWithArray:arrayConcepto];
+    arrayProgramaAll = [[NSMutableArray alloc] initWithArray:arrayPrograma];
+    arrayProgAll = [[NSMutableArray alloc] initWithArray:arrayProg];
+    arrayActiAll = [[NSMutableArray alloc] initWithArray:arrayActi];
+    arrayDideAll = [[NSMutableArray alloc] initWithArray:arrayDide];
+    arrayDverAll = [[NSMutableArray alloc] initWithArray:arrayDver];
+    arrayProyInvAll = [[NSMutableArray alloc] initWithArray:arrayProyInv];
+    arrayEntidadAll = [[NSMutableArray alloc] initWithArray:arrayEntidad];
+
+    
     [loadingIndicator hide];
     
     
@@ -2383,6 +2721,9 @@
 -(IBAction)cleanReportForButton:(UIButton *)sender{
     arrayPresupuesto = [[NSMutableArray alloc] init];
     [collectionViewRepor reloadData];
+    for(ColumnRepor *cl in arrayColumnRepor){
+        [cl.collectionView reloadData];
+    }
     Reports = [[NSMutableArray alloc] init];
     [self hideButtonsGraphicsCsvPdf];
     arrayCellSelected = [[NSMutableArray alloc] init];
@@ -2901,7 +3242,7 @@
     }else if ([mes isEqualToString:@"04" ]) {
         groupDesc = @"dis_ene+dis_feb";
     }else if ([mes isEqualToString:@"05" ]) {
-        groupDesc = @"dis_ene+des_feb+dis_mar";
+        groupDesc = @"dis_ene+dis_feb+dis_mar";
     }else if ([mes isEqualToString:@"06" ]) {
         groupDesc = @"dis_ene+dis_feb+dis_mar+dis_abr";
     }else if ([mes isEqualToString:@"07" ]) {
@@ -3012,16 +3353,30 @@
     
     if ([type isEqualToString:@"detail"]) { //this apply just for detail
         queryDownload = [[ queryDownload stringByAppendingString: [self queryModelSelect]] stringByAppendingString:@" as descripcion"];
-        queryDownload = [ queryDownload stringByAppendingString:@", SUM(original) as original, SUM(modificado) as modificado, (SUM(modificado) - SUM(ejercido)) as disponible" ];
+        if (segmentedAnualAcumula.selectedSegmentIndex==0) { //acumulado
+            queryDownload = [ queryDownload stringByAppendingString:@", SUM(original) as original, SUM(modificado) as modificado, (SUM(modificado) - SUM(ejercido)) as disponible" ];
+            
+        }else{ //calendarizado
+            queryDownload = [ queryDownload stringByAppendingString:@", SUM(ori_ene) as original, SUM(ori_feb) as modificado, SUM(ori_mar) as disponible" ];
+            
+        }
     }else{
         queryDownload = [ queryDownload stringByAppendingString:@"Select SUM(original) as original, SUM(modificado) as modificado, (SUM(modificado) - SUM(ejercido)) as disponible" ];
         
     }
-    
-    queryDownload = [[[ queryDownload stringByAppendingString:@", sum(" ] stringByAppendingString:[self queryModelPeriod60]] stringByAppendingString:@") as dispo60"] ;
-    queryDownload = [[[ queryDownload stringByAppendingString:@", sum(" ] stringByAppendingString:[self queryModelPeriodModp]] stringByAppendingString:@") as modp"] ;
-    queryDownload = [[[ queryDownload stringByAppendingString:@", sum(" ] stringByAppendingString:[self queryModelPeriodEje]] stringByAppendingString:@") as ejercido"] ;
-    queryDownload = [[[[[ queryDownload stringByAppendingString:@", (sum(" ] stringByAppendingString:[self queryModelPeriodModp]] stringByAppendingString:@") - sum( "]stringByAppendingString:[self queryModelPeriodEje]] stringByAppendingString:@")) as disponiblep FROM pres_map_columna"]  ;
+    if (segmentedAnualAcumula.selectedSegmentIndex==0) { //acumulado
+        queryDownload = [[[ queryDownload stringByAppendingString:@", sum(" ] stringByAppendingString:[self queryModelPeriod60]] stringByAppendingString:@") as dispo60"] ;
+        queryDownload = [[[ queryDownload stringByAppendingString:@", sum(" ] stringByAppendingString:[self queryModelPeriodModp]] stringByAppendingString:@") as modp"] ;
+        queryDownload = [[[ queryDownload stringByAppendingString:@", sum(" ] stringByAppendingString:[self queryModelPeriodEje]] stringByAppendingString:@") as ejercido"] ;
+        queryDownload = [[[[[ queryDownload stringByAppendingString:@", (sum(" ] stringByAppendingString:[self queryModelPeriodModp]] stringByAppendingString:@") - sum( "]stringByAppendingString:[self queryModelPeriodEje]] stringByAppendingString:@")) as disponiblep FROM pres_map_columna"]  ;
+    }else{
+        queryDownload = [ queryDownload stringByAppendingString:@", sum(ori_abr) as dispo60" ]  ;
+        queryDownload = [ queryDownload stringByAppendingString:@", sum(ori_may) as modp" ]  ;
+        queryDownload = [ queryDownload stringByAppendingString:@", sum(ori_jun) as ejercido" ]  ;
+        queryDownload = [ queryDownload stringByAppendingString:@", (sum(ori_jul)) as disponiblep FROM pres_map_columna"]  ;
+        
+    }
+
     NSRange end = [archivoSeleccionado rangeOfString:@"="];
     //NSString *modifica  = [archivoSeleccionado substringWithRange:NSMakeRange(end.location+1,archivoSeleccionado.length-end.location-1 )];
     NSString *modifica  = [archivoSeleccionado substringWithRange:NSMakeRange(end.location+1,10 )];
@@ -3061,21 +3416,48 @@
     NSMutableArray *arrayResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     NSMutableArray *arrayToReturn = [[NSMutableArray alloc] init];
     for (NSDictionary * item in arrayResults){
-        
-        NSString *cveResulta = [item objectForKey:key];
-        NSString *descResulta = [item objectForKey:@"descripcion"];    //descrip];
-        
+        NSString *cveResulta ;
+        NSString *descResulta;
         if ([descrip isEqualToString:@"presupuesto"]) {
-            cveResulta = [item objectForKey:key];
-            descResulta = [item objectForKey:@"descripcion"];
+            if ([arrayResults lastObject]== item){
+                cveResulta = @"";
+                [((ColumnRepor*)[arrayColumnRepor objectAtIndex:0]).array addObject:cveResulta];
+                
+                NSString * descResulta = @"TOTAL";
+                [((ColumnRepor*)[arrayColumnRepor objectAtIndex:1]).array addObject:descResulta];
+               
+            }else{
+                cveResulta = [item objectForKey:key];
+                [((ColumnRepor*)[arrayColumnRepor objectAtIndex:0]).array addObject:cveResulta];
+                
+                NSString * descResulta = [item objectForKey:@"descripcion"];
+                [((ColumnRepor*)[arrayColumnRepor objectAtIndex:1]).array addObject:descResulta];
+                
+            }
             
+            NSLog(cveResulta);
+           
             double original = [[item objectForKey:@"original"] doubleValue] ;
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:2]).array addObject:[NSNumber numberWithDouble:original]];
+
             double  modificado = [[item objectForKey:@"modificado"] doubleValue];
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:3]).array addObject:[NSNumber numberWithDouble:modificado]];
+
             double  disponible = [[item objectForKey:@"disponible"] doubleValue];
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:4]).array addObject:[NSNumber numberWithDouble:disponible]];
+            
             double  dispo60 = [[item objectForKey:@"dispo60"] doubleValue] ;
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:5]).array addObject:[NSNumber numberWithDouble:dispo60]];
+
             double  modp = [[item objectForKey:@"modp"]doubleValue];
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:6]).array addObject:[NSNumber numberWithDouble:modp]];
+
             double  ejercido = [[item objectForKey:@"ejercido"]doubleValue];
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:7]).array addObject:[NSNumber numberWithDouble:ejercido]];
+
             double  disponiblep = [[item objectForKey:@"disponiblep"] doubleValue];
+            [((ColumnRepor*)[arrayColumnRepor objectAtIndex:8]).array addObject:[NSNumber numberWithDouble:disponiblep]];
+
             Presupuesto *pr = [[Presupuesto alloc] initWithClave:cveResulta andDescripcion:descResulta andOriginal:original andModificado:modificado andDisponible:disponible andDispo60:dispo60 andModp:modp andEjercido:ejercido andDisponiblep:disponiblep];
             [arrayToReturn addObject:pr];
         }else if ([key isEqualToString:@"periodo"]){
@@ -3084,6 +3466,9 @@
         }
         
         else{
+            cveResulta = [item objectForKey:key];
+            NSString * descResulta = [item objectForKey:@"descripcion"];
+
             if ([key isEqualToString:@"unidad"]) {
                 Unidad *ur = [[Unidad alloc] initWithClave:cveResulta andDescripcion:descResulta];
                 [arrayToReturn addObject:ur];
@@ -3131,7 +3516,7 @@
                 int idPred = 0;
                 NSString *nameN = @"";
                 NSString *sentenceN = @"";
-                Predefinido *pred = [[Predefinido alloc] initWithId:idPred andName:nameN andClave:claveN andValue:valueN andSentence:sentenceN];
+                Predefinido *pred = [[Predefinido alloc] initWithId:idPred andName:valueN andClave:claveN andValue:valueN andSentence:sentenceN];
                 [arrayToReturn addObject:pred];
                 
             }else{
@@ -3246,11 +3631,17 @@
 
 #pragma code for uibutton IBActions
 
+-(IBAction)showSearchBar:(UIButton *)sender{
+    searchBar.hidden = NO;
+}
+
+
 -(IBAction)muestraUnidad:(UIButton*)sender{
     
     alpickerViewUnidad.hidden =!alpickerViewUnidad.hidden;
     buttonToHideUnidad.hidden = !buttonToHideUnidad.hidden;
     
+    [self setPositionForSearchBar:1];
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
     alpickerViewUnidad.hidden =!alpickerViewUnidad.hidden;
@@ -3270,6 +3661,7 @@
     
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:1];
     
     alpickerViewCapitulo.hidden =!alpickerViewCapitulo.hidden;
     buttonToHideCapitulo.hidden = !buttonToHideCapitulo.hidden;
@@ -3287,6 +3679,7 @@
     
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:1];
     alpickerViewConcepto.hidden =!alpickerViewConcepto.hidden;
     buttonToHideConcepto.hidden = !buttonToHideConcepto.hidden;
     alpickerViewUnidad.hidden = YES;
@@ -3306,6 +3699,7 @@
     
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:1];
     alpickerViewPrograma.hidden =!alpickerViewPrograma.hidden;
     buttonToHidePrograma.hidden = !buttonToHidePrograma.hidden;
     alpickerViewConcepto.hidden = YES;
@@ -3357,18 +3751,23 @@
 -(IBAction)muestraProg:(UIButton *)sender{
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:2];
     alpickerViewProg.hidden =NO;
     buttonToHideProg.hidden = NO;
 }
 -(IBAction)muestraActi:(UIButton *)sender{
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:2];
+
     alpickerViewActi.hidden =!alpickerViewActi.hidden;
     buttonToHideActi.hidden = !buttonToHideActi.hidden;
 }
 -(IBAction)muestraCcp :(UIButton *)sender{
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+
+    [self setPositionForSearchBar:1];
     alpickerViewCcp.hidden =!alpickerViewCcp.hidden;
     buttonToHideCcp.hidden = !buttonToHideCcp.hidden;
 }
@@ -3376,12 +3775,16 @@
 -(IBAction)muestraDide  :(UIButton *)sender{
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:3];
+
     alpickerViewDide.hidden =!alpickerViewDide.hidden;
     buttonToHideDide.hidden = !buttonToHideDide.hidden;
 }
 -(IBAction)muestraDver  :(UIButton *)sender{
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:3];
+
     alpickerViewDver.hidden =!alpickerViewDver.hidden;
     buttonToHideDver.hidden = !buttonToHideDver.hidden;
 }
@@ -3389,6 +3792,8 @@
 -(IBAction)muestraEntidad   :(UIButton *)sender{
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:3];
+
     alpickerViewEntidad.hidden =!alpickerViewEntidad.hidden;
     buttonToHideEntidad.hidden = !buttonToHideEntidad.hidden;
 }
@@ -3396,6 +3801,8 @@
 -(IBAction)muestraProyInv:(UIButton *)sender  {
     [self hidePickerViews];
     [self hidePickerViewsSecondColumn];
+    [self setPositionForSearchBar:2];
+
     alpickerViewProyInv.hidden =!alpickerViewProyInv.hidden;
     buttonToHideProyInv.hidden = !buttonToHideProyInv.hidden;
 }
@@ -3963,8 +4370,23 @@
     if ((collectionView == collectionViewRepor) || (collectionView == collectionViewReporPdf)) {
         return [arrayPresupuesto count]*9;
         
+    }else if (collectionView == collectionViewClave ){
+        return [arrayPresupuesto count]*2;
+        
     }else{
-        return [arrayPresupuesto count];
+        BOOL already = NO;
+        for (ColumnRepor *cl in arrayColumnRepor){
+            if (!already){
+                if (cl.collectionView ==collectionView){
+                    return [cl.array count];
+                    already = YES;
+                }
+            }
+        }
+        if (!already){//collectionView don't founded
+            return [arrayPresupuesto count];
+            
+        }
         
     }
 }
@@ -3982,6 +4404,8 @@
         MyCollectionViewCell  *myCell = [collectionView
                                          dequeueReusableCellWithReuseIdentifier:@"MyCell"
                                          forIndexPath:indexPath];
+        UIImage *imageBackground = [UIImage imageNamed:@"gray-back.jpg"];
+        myCell.backgroundColor = [UIColor colorWithPatternImage:imageBackground];
         /*if (myCell.selected) {
          UIImage *imageBackground = [UIImage imageNamed:@"blue6.jpg"];
          myCell.backgroundColor = [UIColor colorWithPatternImage:imageBackground]; // highlight selection
@@ -3992,12 +4416,12 @@
          myCell.backgroundColor = [UIColor whiteColor]; // Default color
          myCell.labelCell.textColor = [UIColor blackColor];
          }*/
-        UIImage *imageBackground = [UIImage imageNamed:@"blue6.jpg"];
+        //UIImage *imageBackground = [UIImage imageNamed:@"blue6.jpg"];
         
         NSLog(@"%d",indexPath.row);
         if (indexPath.row <= [arrayCellSelected count]) {
             if ([[arrayCellSelected objectAtIndex:(indexPath.row ) ] isEqualToString:@"NO"]) {
-                myCell.backgroundColor = [UIColor whiteColor]; // highlight selection
+                myCell.backgroundColor = [UIColor clearColor]; // highlight selection
                 myCell.labelCell.textColor = [UIColor blackColor];
                 [arrayCellSelected setObject:@"NO" atIndexedSubscript:indexPath.row ];
             }else{
@@ -4142,11 +4566,25 @@
         return myCell;
     }else if (collectionView ==collectionViewClave) {
         MyCollectionViewCell  *myCell2 = [collectionView
-                                          dequeueReusableCellWithReuseIdentifier:@"MyCell2"
+                                          dequeueReusableCellWithReuseIdentifier:@"MyCell"
                                           forIndexPath:indexPath];
-        Presupuesto *pr = [arrayPresupuesto objectAtIndex:[indexPath row]];
+        //we need the row and the column
+        //myCell2.backgroundColor = [UIColor grayColor];
+        int base = 2;
+        int rowTotal = [indexPath row];
+        int row = ([indexPath  row] / base) ;
+        int column = ([indexPath  row] % base) ;
+        Presupuesto *pr = [arrayPresupuesto objectAtIndex:row];
         
-        myCell2.labelCell.text = pr.clave;
+        if (column==0){
+            myCell2.labelCell.text = pr.clave;
+            
+        }else if (column == 1){
+            myCell2.labelCell.text = pr.descripcion;
+            
+            
+        }
+            
         
         return myCell2;
         
@@ -4174,10 +4612,88 @@
         
         
         return myCell2;
+    }else{
+        MyCollectionViewCell  *myCell2 = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCell4"
+                                          forIndexPath:indexPath];
+
+        BOOL already = NO;
+        NSString *textForCell;
+        for (ColumnRepor *cl in arrayColumnRepor){
+            if (!already){
+                if (cl.collectionView ==collectionView){
+                    if ([cl.type isEqualToString: @"1"]){ //text
+                      textForCell = [cl.array objectAtIndex:[indexPath row]];
+                        
+                      myCell2.labelCell.textAlignment = NSTextAlignmentLeft;
+
+                    }else{
+                        NSNumber *num1 =[cl.array objectAtIndex:[indexPath row]];
+                        textForCell = [NSNumberFormatter localizedStringFromNumber:num1 numberStyle:NSNumberFormatterCurrencyStyle];
+                        myCell2.labelCell.textAlignment = NSTextAlignmentRight;
+
+                    }
+                    already = YES;
+                    myCell2.labelCell.text = textForCell;
+                    return  myCell2;
+                    
+                }
+            }
+        }
+        if (!already){//collectionView don't founded
+            
+        }
+        
+        return  myCell2;
     }
     
     
 }
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+  /*  if (scrollView ==collectionViewRepor){
+        NSLog(@"Point: %@", NSStringFromCGPoint(collectionViewRepor.contentOffset));
+        CGPoint point =collectionViewRepor.contentOffset;
+        [collectionViewClave setContentOffset:point animated:YES];
+        //scrollRectToVisible:CGRectMake(collectionViewRepor.contentOffset.x, collectionViewRepor.contentOffset.y, collectionViewClave.frame.size.width, collectionViewClave.frame.size.height) animated:YES];
+        
+    }*/
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    for (ColumnRepor *cl in arrayColumnRepor){
+        if (scrollView != cl.collectionView){
+            NSLog(@"Point: %@", NSStringFromCGPoint(collectionViewRepor.contentOffset));
+            CGPoint point =scrollView.contentOffset;
+            [cl.collectionView setContentOffset:point animated:NO];
+            
+        }
+    }
+ /*   if (scrollView ==collectionViewRepor){
+        NSLog(@"Point: %@", NSStringFromCGPoint(collectionViewRepor.contentOffset));
+        CGPoint point =collectionViewRepor.contentOffset;
+        [collectionViewClave setContentOffset:point animated:NO];
+        
+    }*/
+    
+}
+
+- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated{
+    
+}
+
+- (IBAction) yourBtnInScrollViewPressed : (id) sender
+{
+    int x=10;
+    int y = 655;
+    
+    [collectionViewClave scrollRectToVisible:CGRectMake(x, y, collectionViewClave.frame.size.width, collectionViewClave.frame.size.height) animated:YES];
+    [collectionViewRepor scrollRectToVisible:CGRectMake(x, y, collectionViewClave.frame.size.width, collectionViewClave.frame.size.height) animated:YES];
+    
+}
+
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
     MyCollectionViewCell *datasetCell = (MyCollectionViewCell*) [collectionView cellForItemAtIndexPath:indexPath];
@@ -4185,7 +4701,7 @@
     
     if ([[arrayCellSelected objectAtIndex:(indexPath.row ) ] isEqualToString:@"YES"]) {
         datasetCell.backgroundColor = [UIColor whiteColor]; // highlight selection
-        datasetCell.labelCell.textColor = [UIColor blackColor];
+        datasetCell.labelCell.textColor = [UIColor whiteColor];
         [arrayCellSelected setObject:@"NO" atIndexedSubscript:indexPath.row ];
     }else{
         datasetCell.backgroundColor = [UIColor colorWithPatternImage:imageBackground]; // highlight selection
@@ -4268,8 +4784,8 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGPoint pointClave = collectionViewClave.contentOffset;
-    [collectionViewDescripcion setContentOffset:CGPointMake(collectionViewDescripcion.contentOffset.x, pointClave.y)];
+    //CGPoint pointClave = collectionViewClave.contentOffset;
+    //[collectionViewDescripcion setContentOffset:CGPointMake(collectionViewDescripcion.contentOffset.x, pointClave.y)];
     
     if ((collectionView == collectionViewRepor) || (collectionView == collectionViewReporPdf)) {
         int base = 9;
@@ -4278,16 +4794,16 @@
         int column = ([indexPath  row] % base) ;
         if (column == 1){
             // return CGSizeMake(165, 45);
-            return CGSizeMake(102, 65);
+            return CGSizeMake(102, 55);
         }else if (column == 0) {
             //  return CGSizeMake(46, 45);
-            return CGSizeMake(102, 65);
+            return CGSizeMake(102, 55);
         }else{
-            return CGSizeMake(101, 65);
+            return CGSizeMake(101, 55);
         }
     }else if (collectionView == collectionViewClave) {
         
-        return CGSizeMake(58, 50);
+        return CGSizeMake(102, 55);
         
     }else if (collectionView == collectionViewDescripcion) {
         
@@ -4295,7 +4811,8 @@
         
     }else{
         
-        return CGSizeMake(98, 50);
+       // return CGSizeMake(102, 50);
+        return CGSizeMake(collectionView.frame.size.width, 50);
         
     }
     
@@ -4441,18 +4958,19 @@
 
 
 -(IBAction)moveCollectionAndButton:(UIButton *)sender andAnimated:(BOOL)anim{
+    int movey=15;
     if ((isMovedCollection)) {
-        
+       
         if (anim) {
             [UIView   animateWithDuration:1.0 delay:0.0 options:UIViewAnimationCurveEaseOut animations: ^
              {
-                 labelTitleRepor.frame = CGRectMake(292, 35, 492, 40);
-                 collectionViewRepor.frame = CGRectMake(10, 470, 1000, 230);
+                 labelTitleRepor.frame = CGRectMake(292, 50, 492, 40);
+                 collectionViewRepor.frame = CGRectMake(5, 35, 1000, 230);
+                 scrollReports.frame = CGRectMake(10, 430, 1000, 230);
                  isMovedCollection = NO;
-                 buttonMoveCollection.center = CGPointMake(479, 381);
+                 buttonMoveCollection.center = CGPointMake(579, 381);
                  buttonMoveCollection.transform = CGAffineTransformMakeRotation( ( 360 * M_PI ) / 180 );
-                 int movey=445;
-                 buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, movey);
+                 /*buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, movey);
                  buttonTitleOriginal.center = CGPointMake(buttonTitleOriginal.center.x, movey);
                  buttonTitleDescripcion.center = CGPointMake(buttonTitleDescripcion.center.x, movey);
                  buttonTitleModificado.center = CGPointMake(buttonTitleModificado.center.x, movey);
@@ -4465,7 +4983,7 @@
                  
                  //    UIImage *buttonImage = [UIImage imageNamed:@"double-arrow.png"];
                  //    [buttonMoveCollection setBackgroundImage:buttonImage forState:UIControlStateNormal];
-                 
+                 */
                  
              }completion:^ (BOOL finished)
              {
@@ -4474,11 +4992,12 @@
              ];
         }else{
             
-            collectionViewRepor.frame = CGRectMake(10, 470, 1000, 230);
+            collectionViewRepor.frame = CGRectMake(5, 50, 1000, 230);
             isMovedCollection = NO;
-            buttonMoveCollection.center = CGPointMake(479, 381);
+            buttonMoveCollection.center = CGPointMake(579, 381);
             buttonMoveCollection.transform = CGAffineTransformMakeRotation( ( 360 * M_PI ) / 180 );
-            int movey=445;
+            scrollReports.frame = CGRectMake(10, 430, 1000, 230);
+
             buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, movey);
             buttonTitleOriginal.center = CGPointMake(buttonTitleOriginal.center.x, movey);
             buttonTitleDescripcion.center = CGPointMake(buttonTitleDescripcion.center.x, movey);
@@ -4499,19 +5018,21 @@
              {
                  labelTitleRepor.frame = CGRectMake(112, 35, 492, 40);
                  
-                 collectionViewRepor.frame = CGRectMake(10, 125, 1000, 570);
+                 collectionViewRepor.frame = CGRectMake(5, 35, 1000, 570);
+                 scrollReports.frame = CGRectMake(10, 105, 1000, 5700);
+
                  isMovedCollection = YES;
                  buttonMoveCollection.center = CGPointMake(479, 51);
                  buttonMoveCollection.transform = CGAffineTransformMakeRotation( ( 180 * M_PI ) / 180 );
-                 buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, 101);
-                 buttonTitleOriginal.center = CGPointMake(buttonTitleOriginal.center.x, 101);
-                 buttonTitleDescripcion.center = CGPointMake(buttonTitleDescripcion.center.x, 101);
-                 buttonTitleModificado.center = CGPointMake(buttonTitleModificado.center.x, 101);
-                 buttonTitleModp.center = CGPointMake(buttonTitleModp.center.x, 101);
-                 buttonTitleEjercido.center = CGPointMake(buttonTitleEjercido.center.x, 101);
-                 buttonTitleDisponiblep.center = CGPointMake(buttonTitleDisponiblep.center.x, 101);
-                 buttonTitleDispo60.center = CGPointMake(buttonTitleDispo60.center.x, 101);
-                 buttonTitleDisponible.center = CGPointMake(buttonTitleDisponible.center.x, 101);
+                 buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, movey);
+                 buttonTitleOriginal.center = CGPointMake(buttonTitleOriginal.center.x, movey);
+                 buttonTitleDescripcion.center = CGPointMake(buttonTitleDescripcion.center.x, movey);
+                 buttonTitleModificado.center = CGPointMake(buttonTitleModificado.center.x, movey);
+                 buttonTitleModp.center = CGPointMake(buttonTitleModp.center.x, movey);
+                 buttonTitleEjercido.center = CGPointMake(buttonTitleEjercido.center.x, movey);
+                 buttonTitleDisponiblep.center = CGPointMake(buttonTitleDisponiblep.center.x, movey);
+                 buttonTitleDispo60.center = CGPointMake(buttonTitleDispo60.center.x, movey);
+                 buttonTitleDisponible.center = CGPointMake(buttonTitleDisponible.center.x, movey);
                  //AudioServicesPlaySystemSound(soundDrag);
                  
                  
@@ -4521,19 +5042,20 @@
              }
              ];
         }else{
-            collectionViewRepor.frame = CGRectMake(10, 125, 1000, 570);
+            collectionViewRepor.frame = CGRectMake(5, 35, 1000, 570);
+            scrollReports.frame = CGRectMake(10, 105, 1000, 570);
             isMovedCollection = YES;
             buttonMoveCollection.center = CGPointMake(479, 31);
             buttonMoveCollection.transform = CGAffineTransformMakeRotation( ( 180 * M_PI ) / 180 );
-            buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, 101);
-            buttonTitleOriginal.center = CGPointMake(buttonTitleOriginal.center.x, 101);
-            buttonTitleDescripcion.center = CGPointMake(buttonTitleDescripcion.center.x, 101);
-            buttonTitleModificado.center = CGPointMake(buttonTitleModificado.center.x, 101);
-            buttonTitleModp.center = CGPointMake(buttonTitleModp.center.x, 101);
-            buttonTitleEjercido.center = CGPointMake(buttonTitleEjercido.center.x, 101);
-            buttonTitleDisponiblep.center = CGPointMake(buttonTitleDisponiblep.center.x, 101);
-            buttonTitleDispo60.center = CGPointMake(buttonTitleDispo60.center.x, 101);
-            buttonTitleDisponible.center = CGPointMake(buttonTitleDisponible.center.x, 101);
+            buttonTitleClave.center = CGPointMake(buttonTitleClave.center.x, movey);
+            buttonTitleOriginal.center = CGPointMake(buttonTitleOriginal.center.x, movey);
+            buttonTitleDescripcion.center = CGPointMake(buttonTitleDescripcion.center.x, movey);
+            buttonTitleModificado.center = CGPointMake(buttonTitleModificado.center.x, movey);
+            buttonTitleModp.center = CGPointMake(buttonTitleModp.center.x, movey);
+            buttonTitleEjercido.center = CGPointMake(buttonTitleEjercido.center.x, movey);
+            buttonTitleDisponiblep.center = CGPointMake(buttonTitleDisponiblep.center.x, movey);
+            buttonTitleDispo60.center = CGPointMake(buttonTitleDispo60.center.x, movey);
+            buttonTitleDisponible.center = CGPointMake(buttonTitleDisponible.center.x, movey);
             
         }
         

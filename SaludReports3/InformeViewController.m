@@ -304,9 +304,9 @@
     CGSize imageSize = imageHeader.size;
     UIImageView *imageViewCell = [[UIImageView alloc] initWithImage:imageHeader];
     [imageViewCell setFrame:CGRectMake(0,0,  100, 40)];
-    UIColor *colorHeader = [UIColor colorWithPatternImage:imageHeader];
+    //UIColor *colorHeader = [UIColor colorWithPatternImage:imageHeader];
     
-    [cell setBackgroundColor:colorHeader ] ;
+    //[cell setBackgroundColor:colorHeader ] ;
     //[cell addSubview:imageViewCell];
     //[cell sendSubviewToBack:imageViewCell];
     // Set up the cell...
@@ -330,7 +330,6 @@
     
     return cell;
 }
-
 
 
 - (void)showLoadingIndicator:(NSString *)theMessage {

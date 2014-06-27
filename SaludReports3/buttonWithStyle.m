@@ -15,12 +15,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         //self = [[UIButton alloc] initWithFrame:CGRectMake(202, 440, 170, 50)];
-        self.backgroundColor = [[UIColor alloc ] initWithPatternImage:[UIImage imageNamed:@"blue6.jpg" ] ];
+//        self.backgroundColor = [[UIColor alloc ] initWithPatternImage:[UIImage imageNamed:@"blue6.jpg" ] ];
+       // self.backgroundColor = [[UIColor alloc ] initWithPatternImage:[UIImage imageNamed:@"background.jpg" ] ];
+        [self setBackgroundColor:UIColorFromRGB(UIColorBlueFromRGB)];
          //self.backgroundColor = [[UIColor alloc ] initWithPatternImage:[UIImage imageNamed:@"button_red.png" ] ];
 
         [self setTitle:@"Ok"  forState:UIControlStateNormal];
-        self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+        self.titleLabel.textColor = UIColorFromRGB(UIColorGrayFromRGB);
+        self.titleLabel.font = [UIFont boldSystemFontOfSize:14];
         
         // Initialization code
     }

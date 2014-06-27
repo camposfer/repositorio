@@ -78,16 +78,17 @@
     //[self addSubview:shadow];
     
     // Add border images
-    UIImageView *leftBorder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame_left"]];
+   // UIImageView *leftBorder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame_left"]];
+    UIImageView *leftBorder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.jpg"]];
     leftBorder.frame = CGRectMake(0, 0, 15, 216);
     [self addSubview:leftBorder];
-    UIImageView *rightBorder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame_right"]] ;
+    UIImageView *rightBorder = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.jpg"]] ;
     rightBorder.frame = CGRectMake(self.frame.size.width - 15, 0, 15, 216);
     [self addSubview:rightBorder];
     UIImageView *middleBorder = [[UIImageView alloc] initWithImage:
-                                  [[UIImage imageNamed:@"frame_middle"] 
+                                  [[UIImage imageNamed:@"background.jpg"]
                                    stretchableImageWithLeftCapWidth:0 topCapHeight:10]];
-    middleBorder.frame = CGRectMake(15, 0, self.frame.size.width - 30, 216);
+    middleBorder.frame = CGRectMake(15, 0, self.frame.size.width - 30, 16);
     [self addSubview:middleBorder];
   }
   return self;

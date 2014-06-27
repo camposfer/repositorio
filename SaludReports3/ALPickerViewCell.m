@@ -35,9 +35,10 @@
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
   if ((self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier])) {
     selectionState_ = NO;
-    self.textLabel.font = [UIFont systemFontOfSize:10];
-      self.textLabel.numberOfLines = 5;
+    self.textLabel.font = [UIFont systemFontOfSize:12];
+      self.textLabel.numberOfLines = 3;
       self.textLabel.lineBreakMode =  NSLineBreakByWordWrapping;
+      //self.frame = CGRectMake(0, 0, 150, 30);
   }
   return self;
 }
@@ -83,8 +84,8 @@
 - (void)layoutSubviews {
   [super layoutSubviews];
   
-  self.imageView.frame = CGRectMake(15, 12, 18, 18);
-  self.textLabel.frame = CGRectMake(44, 20, self.frame.size.width - 34, 30);
+  self.imageView.frame = CGRectMake(15, 4, 18, 33);
+  self.textLabel.frame = CGRectMake(44, 0, self.frame.size.width - 50, 45);
 }
 
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *labelCell;
+@property (nonatomic)  UILabel *labelCell;
 
 @end

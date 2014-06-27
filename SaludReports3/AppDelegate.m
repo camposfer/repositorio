@@ -12,6 +12,7 @@
 @synthesize arrayForGraph;
 @synthesize valChart;
 
+
 @synthesize databaseConnection, currentLink, version;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
